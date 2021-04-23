@@ -1,0 +1,375 @@
+fileFormatVersion: 2
+guid: ae049fb930112aa41bc7c0acde3c31f6
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 7198180050838285100
+    second: water wave modifier|Icosphere.006Action
+  - first:
+      74: 6289133850154135126
+    second: water wave modifier|Plane.006Action
+  - first:
+      74: 4235393511616067463
+    second: water wave modifier|Plane.017Action
+  - first:
+      74: -935794158944064447
+    second: Fish.005|Icosphere.006Action
+  - first:
+      74: 1823758654816380113
+    second: Fish.005|Plane.006Action
+  - first:
+      74: 7565848675288858981
+    second: Fish.005|Plane.017Action
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
+  - first:
+      74: -1422011007694221501
+    second: Armature|ArmatureAction.001
+  - first:
+      74: -2376953932323487263
+    second: Armature|Icosphere.006Action
+  - first:
+      74: 1634893686381827764
+    second: Armature|Plane.006Action
+  - first:
+      74: -8390086068769526075
+    second: Armature|Plane.017Action
+  - first:
+      74: 1873164022341003024
+    second: Fish.001|Icosphere.006Action
+  - first:
+      74: 7613752714508807364
+    second: Fish.001|Plane.006Action
+  - first:
+      74: 1938850517899234058
+    second: Fish.001|Plane.017Action
+  - first:
+      74: 3507715807080513362
+    second: Fish.002|Icosphere.006Action
+  - first:
+      74: 5831504409031906021
+    second: Fish.002|Plane.006Action
+  - first:
+      74: -4227930171047070746
+    second: Fish.002|Plane.017Action
+  - first:
+      74: -960898424075949690
+    second: Armature.001|ArmatureAction
+  - first:
+      74: -8639993316982285888
+    second: Armature.001|ArmatureAction.001
+  - first:
+      74: 5848147201592251209
+    second: Armature.001|Icosphere.006Action
+  - first:
+      74: 2913015580467803470
+    second: Armature.001|Plane.006Action
+  - first:
+      74: 1058175867430825821
+    second: Armature.001|Plane.017Action
+  - first:
+      74: 4607022560298898128
+    second: Icosphere.006|Icosphere.006Action
+  - first:
+      74: 7637773062654855050
+    second: Icosphere.006|Plane.006Action
+  - first:
+      74: 5968558090962541276
+    second: Icosphere.006|Plane.017Action
+  - first:
+      74: -7588223174040905335
+    second: Plane.006|Icosphere.006Action
+  - first:
+      74: 1837505092662289624
+    second: Plane.006|Plane.006Action
+  - first:
+      74: 7347747546419310863
+    second: Plane.006|Plane.017Action
+  - first:
+      74: -4417225247961529120
+    second: Plane.017|Icosphere.006Action
+  - first:
+      74: 5699802601436406429
+    second: Plane.017|Plane.006Action
+  - first:
+      74: -6560837438621144390
+    second: Plane.017|Plane.017Action
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue material
+    second: {fileID: 2100000, guid: 588d6893f7a8c164d8d4287f1a70c94b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Firefly light
+    second: {fileID: 2100000, guid: ae2f23245e5c1bd45b6ab775ecab7d72, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fish eye
+    second: {fileID: 2100000, guid: 80ae20b931c1dee4c8065da463c6aaaf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fish fin
+    second: {fileID: 2100000, guid: c598cc655f2dda04383727e197a019a3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fish skin
+    second: {fileID: 2100000, guid: ddbe7c91f1e520f4b83c9b029d0a3b5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green leaf
+    second: {fileID: 2100000, guid: 86c84fb84d9dda64a837136a4611e0cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Green leaf 02
+    second: {fileID: 2100000, guid: 6336af7abeebccb438168a9bc94e0272, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 1
+    second: {fileID: 2100000, guid: 2864895374f18fb46aa8459340869737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 2
+    second: {fileID: 2100000, guid: dfd6a58c83c9f8e42a5b97eb63ea3654, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock 3
+    second: {fileID: 2100000, guid: 6bc5fc1d7f3f57744b6e2c0e522f451b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Sand
+    second: {fileID: 2100000, guid: d61c298b1e6dd844aa61c2ebaeba588e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Transparent.001
+    second: {fileID: 2100000, guid: 2d01671b1210bd649aa8b9fe965be952, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Water.001
+    second: {fileID: 2100000, guid: ce2943a8e0762f240a6e86652e8a3bba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark
+    second: {fileID: 2100000, guid: 658c933e26612414c83983f6fd8e10db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark 02
+    second: {fileID: 2100000, guid: ab17d2ebb2283d64e8a9e57b68c19e82, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark 02.001
+    second: {fileID: 2100000, guid: 8b5bfc70e6cefb54287efb33a2953819, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark 03
+    second: {fileID: 2100000, guid: c899b2871a3ff5e48ad8db44133b0ded, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark 03.001
+    second: {fileID: 2100000, guid: 55a77b38fd65d6149a5fffbf2d9a52b4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark 04
+    second: {fileID: 2100000, guid: 242eff6f5edf7b948a7b4c2157dbc2db, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark.001
+    second: {fileID: 2100000, guid: 03c2d44dc500ea7409c4ed7e902c0764, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark.002
+    second: {fileID: 2100000, guid: 7343470302f2f3547bfef287cde47079, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood dark.003
+    second: {fileID: 2100000, guid: f5b795816420aff4687fbcf6150ada4e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood light
+    second: {fileID: 2100000, guid: e9e24da46fdaa8f41bc27233f87f5fa6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood light 02
+    second: {fileID: 2100000, guid: 2752522fccf59a84dac1a52756e2dcad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood light 02.001
+    second: {fileID: 2100000, guid: 173d98d46135a864c82d08c27659b085, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood light.001
+    second: {fileID: 2100000, guid: 641e05412cbabc046b69a7f598ab0b49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: 962c399bdc6104749bb97750c48211d9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic black.001
+    second: {fileID: 2100000, guid: ddc22f2be67ac324ca953631cd2eba70, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic blue.001
+    second: {fileID: 2100000, guid: d0c88720ad2d72145b396456ba9bb903, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic red.001
+    second: {fileID: 2100000, guid: c18825016f83c6841a868877194e4cd8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic white.001
+    second: {fileID: 2100000, guid: e87f236bd0787714dbcfd2747baabb98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic yellow.001
+    second: {fileID: 2100000, guid: 472fe751a63989249b6dfb64423e549d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rope.001
+    second: {fileID: 2100000, guid: fe0e7a98bbbbd994296e46d7bd88dd9d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: sea plant
+    second: {fileID: 2100000, guid: b1abf20e7da9d7a4a9fa7a8420afd8c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: transparent wings
+    second: {fileID: 2100000, guid: 9cef3bf2bb20f93498137502a3e19b69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white material
+    second: {fileID: 2100000, guid: 307fbf42ecfa40f4d9937ad172603c3a, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

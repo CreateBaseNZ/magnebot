@@ -1,0 +1,39 @@
+ManifestFileVersion: 0
+CRC: 4291519387
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 35df0171e47e40b1e09db944977c3b57
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: f33bd85baaba49c9be8f2c33bc6d1456
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 54
+  Script: {instanceID: 0}
+- Class: 59
+  Script: {instanceID: 0}
+- Class: 64
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 2d89806b684309e448c7d72beab06991, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/roboticarm.prefab
+Dependencies: []
