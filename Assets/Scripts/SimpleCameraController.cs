@@ -226,7 +226,7 @@ namespace UnityTemplateProjects
 #if ENABLE_INPUT_SYSTEM
             return boostFactorAction.ReadValue<Vector2>().y * 0.01f;
 #else
-            return Input.mouseScrollDelta.y * 0.2f;
+            return Input.mouseScrollDelta.y * 0.0f;
 #endif
         }
 

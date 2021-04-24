@@ -19,7 +19,7 @@ public class loader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.P) && bundle != null)
         {
             GameObject cube = bundle.LoadAsset<GameObject>("RoboticArm 1");
             Instantiate(cube);
@@ -31,8 +31,12 @@ public class loader : MonoBehaviour
         var request = UnityEngine.Networking.UnityWebRequestAssetBundle.GetAssetBundle(url, 0);
         yield return request.SendWebRequest();
         bundle = UnityEngine.Networking.DownloadHandlerAssetBundle.GetContent(request);
-        
         request.Dispose();
+    }
+
+    private void OnDestroy()
+    {
+        bundle.Unload(true);
     }
 
 }

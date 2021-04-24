@@ -9,7 +9,7 @@ public class UiSystem : MonoBehaviour
     public ObjectiveGroup objectiveGroup;
 
     public Text fps;
-    public Text winUI;
+    public GameObject winUI;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class UiSystem : MonoBehaviour
         score.text = (objectiveGroup.initialObjectiveNumber-objectiveGroup.GetObjectiveNumber()) + "/" + objectiveGroup.initialObjectiveNumber;
         if(objectiveGroup.GetObjectiveNumber() == 0)
         {
-            winUI.enabled = true;
+            winUI.SetActive(true);
         }
         
     }

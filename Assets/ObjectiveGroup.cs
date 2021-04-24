@@ -23,7 +23,7 @@ public class ObjectiveGroup : MonoBehaviour
 
     public void RemoveObjective(Objective obj)
     {
-        obj.gameObject.SetActive(false);
+        obj.transform.parent.gameObject.SetActive(false);
         _objectives.Remove(obj);
     }
 
