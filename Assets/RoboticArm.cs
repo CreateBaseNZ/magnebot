@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RoboticArm : MonoBehaviour
 {
-    public Slider[] sliders;
     public float motorForce = 100f;
 
     private HingeJoint[] _hingeJoints;
@@ -22,7 +19,7 @@ public class RoboticArm : MonoBehaviour
     {
         for (int i = 0; i < _hingeJoints.Length; i++)
         {
-            var error = sliders[i].value - _hingeJoints[i].angle;
+            var error = 0 - _hingeJoints[i].angle;
             var absError = Mathf.Abs(error);
 
             var motorVelocity = 80;
@@ -45,8 +42,6 @@ public class RoboticArm : MonoBehaviour
             motor.freeSpin = false;
             _hingeJoints[i].motor = motor;
             _hingeJoints[i].useMotor = true;
-
-            
         }
 
     }

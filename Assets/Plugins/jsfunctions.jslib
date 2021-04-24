@@ -14,7 +14,6 @@ mergeInto(LibraryManager.library, {
   },
 
   AddNumbers: function (x, y) {
-    document.getElementById('unity-fullscreen-button').style.background = "#FF0000"
     return x + y;
   },
 

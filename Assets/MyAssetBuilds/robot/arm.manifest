@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 4291519387
+CRC: 1778929804
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 35df0171e47e40b1e09db944977c3b57
+    Hash: 960b33c86d0dd96b2f29277c62b7ab62
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f33bd85baaba49c9be8f2c33bc6d1456
+    Hash: 4802b170a08bbc4a8e96cc20b0e00eab
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -27,13 +27,17 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 59
   Script: {instanceID: 0}
-- Class: 64
+- Class: 65
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 2d89806b684309e448c7d72beab06991, type: 3}
+  Script: {fileID: 11500000, guid: 7a6b9717b94723c45ac197cfbd7b6f39, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 269f3ba0923630246b7ca27568be060b, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 135
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/roboticarm.prefab
+- Assets/Prefabs/RoboticArm 1.prefab
 Dependencies: []
