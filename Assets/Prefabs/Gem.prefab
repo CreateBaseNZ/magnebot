@@ -104,7 +104,6 @@ GameObject:
   - component: {fileID: 5498510274346979556}
   - component: {fileID: 8717599818980263158}
   - component: {fileID: 4794540561516986202}
-  - component: {fileID: 4953628156433605199}
   - component: {fileID: 4953628156433605196}
   m_Layer: 0
   m_Name: Gem
@@ -177,19 +176,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4953628156433605199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4953628156433605198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d0c46976a743d54c8c5354e668bde3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 60
 --- !u!65 &4953628156433605196
 BoxCollider:
   m_ObjectHideFlags: 0

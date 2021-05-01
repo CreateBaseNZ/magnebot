@@ -8,7 +8,6 @@ public class JavascriptHook : MonoBehaviour
     public KeyCode redKey;
     public KeyCode greenKey;
 
-
     public void TintRed()
     {
         box.GetComponent<Renderer>().material.color = Color.red;
@@ -19,29 +18,23 @@ public class JavascriptHook : MonoBehaviour
         box.GetComponent<Renderer>().material.color = Color.green;
     }
 
-    public void StartCountingToTen(int number)
-    {
-        for (int i = 1; i <= number; i++)
-        {
-            InvokeRepeating("Count", 0, 1);
-        }
-    }
-
-    public void Count(int number)
-    {
-
-    }
-
     // Start is called before the first frame update
     void Start()
     {
+        
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-
+        if (Input.GetKeyDown(redKey))
+        {
+            TintRed();
+        }
+        if (Input.GetKeyDown(greenKey))
+        {
+            TintGreen();
+        }
     }
 }

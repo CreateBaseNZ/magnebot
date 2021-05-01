@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Objective : MonoBehaviour
 {
-    public float rotationSpeed = 360;
-
     private ObjectiveGroup _objectiveGroup;
 
     // Start is called before the first frame update
@@ -17,7 +15,6 @@ public class Objective : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localEulerAngles += new Vector3(0, rotationSpeed * Time.deltaTime, 0);
     }
 
     private void OnTriggerEnter(Collider other)
