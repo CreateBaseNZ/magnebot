@@ -23,6 +23,7 @@ var myGameInstance = null;
   script.onload = () => {
     createUnityInstance(canvas, config, (progress) => {...}).then((unityInstance) => {
       myGameInstance = unityInstance;
+      ...
 ```
 ### Calling Unity scripts functions from JavaScript
 Unity functions may be called through javascript through the following code:
