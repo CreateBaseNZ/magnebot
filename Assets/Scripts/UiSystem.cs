@@ -20,11 +20,6 @@ public class UiSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score.text = (objectiveGroup.initialObjectiveNumber-objectiveGroup.GetObjectiveNumber()) + "/" + objectiveGroup.initialObjectiveNumber;
-        if(objectiveGroup.GetObjectiveNumber() == 0)
-        {
-            winUI.SetActive(true);
-        }
         
     }
 

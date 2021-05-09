@@ -19,7 +19,7 @@ public class Objective : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("EndEffector"))
+        if (other.CompareTag(tag) && other.GetComponent<Objective>() == null)
         {
             _objectiveGroup.RemoveObjective(this);
         }

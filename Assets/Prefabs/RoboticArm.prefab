@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 3708821661065643965}
   - component: {fileID: 4049775146740210950}
   m_Layer: 0
-  m_Name: RoboticArm 1
+  m_Name: RoboticArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a6b9717b94723c45ac197cfbd7b6f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {x: 0, y: 0, z: 0}
   motorForce: Infinity
 --- !u!1 &4663826886295601727
 GameObject:
@@ -655,7 +656,6 @@ GameObject:
   - component: {fileID: 4172820666473220142}
   - component: {fileID: 3815350273100303225}
   - component: {fileID: 7307962710550509233}
-  - component: {fileID: 8838301740080319810}
   m_Layer: 0
   m_Name: BaseBottom
   m_TagString: Untagged
@@ -758,18 +758,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10606338, y: 0.10600097, z: 0.07069737}
   m_Center: {x: -0.0009036541, y: -0.003024191, z: -0.003761725}
---- !u!114 &8838301740080319810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7307962710550509234}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269f3ba0923630246b7ca27568be060b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &8235902228539590212
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,7 +772,7 @@ GameObject:
   - component: {fileID: 8235902228539590218}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: EndEffector
+  m_TagString: Objective0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -860,7 +848,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8235902228539590212}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

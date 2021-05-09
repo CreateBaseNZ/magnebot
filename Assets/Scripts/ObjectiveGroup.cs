@@ -5,30 +5,29 @@ using System.Linq;
 
 public class ObjectiveGroup : MonoBehaviour
 {
-    public int initialObjectiveNumber;
-    private List<Objective> _objectives;
+    private int _initialObjectiveNumber;
+    private List<GameObject> _objectives;
 
     // Start is called before the first frame update
     void Start()
     {
-        _objectives = GetComponentsInChildren<Objective>().ToList();
-        initialObjectiveNumber = _objectives.Count();
+        _objectives = GetComponentsInChildren<Objective>().Select(s => s.transform.parent.gameObject).ToList();
+        _initialObjectiveNumber = _objectives.Count();
     }
 
     // Update is called once per frame
     void Update()
     {
-        _objectives.Select(s => s.isActiveAndEnabled).Count();
+        
     }
 
     public void RemoveObjective(Objective obj)
     {
-        obj.transform.parent.gameObject.SetActive(false);
-        _objectives.Remove(obj);
+        obj.gameObject.SetActive(false);
     }
 
     public float GetObjectiveNumber()
     {
-        return _objectives.Count();
+        return _objectives.Select(s => s.activeSelf).Count();
     }
 }
