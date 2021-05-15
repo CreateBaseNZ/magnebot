@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 public class SceneController : MonoBehaviour
 {
     public static SceneController Instance { get { return _instance; } }
+    public string sceneName;
 
     private static SceneController _instance;
-    private uint _currentSubsceneIndex = 0;
+    private string _currentScene;
     private List<string> scenesInBuild = new List<string>();
 
     private void Awake()
@@ -32,48 +35,37 @@ public class SceneController : MonoBehaviour
             int lastSlash = scenePath.LastIndexOf("/");
             scenesInBuild.Add(scenePath.Substring(lastSlash + 1, scenePath.LastIndexOf(".") - lastSlash - 1));
         }
+        scenesInBuild = scenesInBuild.Select(a => a.ToLower()).ToList();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            LoadSubscene(1);
-        }
-        else if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            LoadSubscene(2);
-        }
-        else if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            LoadSubscene(3);
+            LoadScene(sceneName);
         }
     }
 
     public void LoadScene(string sceneName)
     {
-        if (sceneName.ToLower().Contains("project") && !sceneName.ToLower().Contains("sub"))
+        if (scenesInBuild.Contains(sceneName.ToLower())) 
         {
-            SceneManager.LoadSceneAsync(sceneName);
-        }
-        else
-        {
-            Debug.LogWarning("Scene must be a main Project scene");
+            if (sceneName.ToLower().Contains("training"))
+            {
+                SceneManager.LoadScene("Training_Base_0");
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            }
+            else
+            {
+                SceneManager.LoadScene(sceneName);
+            }
+            _currentScene = sceneName;
         }
     }
 
-    public void LoadSubscene(uint subsceneIndex)
+    public void ResetScene()
     {
-        var sceneName = SceneManager.GetActiveScene().name + "Sub" + subsceneIndex;
-        if (SceneManager.GetActiveScene().name.Contains("Project") && (scenesInBuild.Contains(sceneName)))
-        {
-            if (_currentSubsceneIndex > 0)
-            {
-                SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene().name + "Sub" + _currentSubsceneIndex);
-            }
-            SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
-            _currentSubsceneIndex = subsceneIndex;
-        }
+        LoadScene(_currentScene);
     }
 }

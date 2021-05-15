@@ -21,7 +21,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        #if !UNITY_EDITOR && UNITY_WEBGL
+        WebGLInput.captureAllKeyboardInput = false;
+        #endif
     }
 
     // Update is called once per frame
@@ -39,14 +41,23 @@ public class GameController : MonoBehaviour
 
     public void Pause()
     {
-        Debug.Log("Pausing Game");
         Time.timeScale = 0;
     }
 
     public void Resume()
     {
-        Debug.Log("Resuming Game");
         Time.timeScale = 1;
     }
 
+    // This function will be called from the webpage
+    public void FocusCanvas(string p_focus)
+    {
+        #if !UNITY_EDITOR && UNITY_WEBGL
+        if (p_focus == "0") {
+            WebGLInput.captureAllKeyboardInput = false;
+        } else {
+            WebGLInput.captureAllKeyboardInput = true;
+        }
+        #endif
+    }
 }

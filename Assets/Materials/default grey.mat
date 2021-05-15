@@ -13,9 +13,8 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -106,12 +105,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.7098005, g: 0.7098005, b: 0.7098005, a: 1}
-    - _Color: {r: 0.46207204, g: 0.46207204, b: 0.46207204, a: 1}
+    - _BaseColor: {r: 0.91714513, g: 0.91714513, b: 0.91714513, a: 1}
+    - _Color: {r: 0.82176715, g: 0.82176715, b: 0.82176715, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &3339854542591922285
+--- !u!114 &2966198623961887811
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
