@@ -33,35 +33,7 @@ public class RoboticArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < Mathf.Min(_hingeJoints.Length, actuators.motors.Count); i++)
-        {
-            var newMotor = new JointMotor();
-            newMotor.force = actuators.motors[i].force;
-            newMotor.targetVelocity = actuators.motors[i].targetVelocity;
-            newMotor.freeSpin = actuators.motors[i].freeSpin;
-            
-            _hingeJoints[actuators.motors[i].motorIndex].motor = newMotor;
-            _hingeJoints[actuators.motors[i].motorIndex].useMotor = true;
-        }
-
-        for (int i = 0; i < Mathf.Min(_hingeJoints.Length, actuators.motors.Count); i++)
-        {
-            var newJointData = new JointData();
-            newJointData.motorIndex = i;
-            newJointData.angle = _hingeJoints[i].angle;
-            newJointData.axis = _hingeJoints[i].axis;
-            newJointData.currentForce = _hingeJoints[i].currentForce;
-            newJointData.currentTorque = _hingeJoints[i].currentTorque;
-            newJointData.velocity = _hingeJoints[i].velocity;
-
-            sensorData.jointData[i] = newJointData;
-        }
-
-
-        #if !UNITY_EDITOR && UNITY_WEBGL
-        GetSensorData(JsonUtility.ToJson(sensorData));
-        #endif
-
+        
     }
 
     public void SetActuators(string actuatorSpecs)
@@ -99,6 +71,38 @@ public class RoboticArm : MonoBehaviour
         public float force;
         public float targetVelocity;
         public bool freeSpin;
+    }
+
+    private void FixedUpdate()
+    {
+        for (int i = 0; i < Mathf.Min(_hingeJoints.Length, actuators.motors.Count); i++)
+        {
+            var newMotor = new JointMotor();
+            newMotor.force = actuators.motors[i].force;
+            newMotor.targetVelocity = actuators.motors[i].targetVelocity;
+            newMotor.freeSpin = actuators.motors[i].freeSpin;
+
+            _hingeJoints[actuators.motors[i].motorIndex].motor = newMotor;
+            _hingeJoints[actuators.motors[i].motorIndex].useMotor = true;
+        }
+
+        for (int i = 0; i < Mathf.Min(_hingeJoints.Length, actuators.motors.Count); i++)
+        {
+            var newJointData = new JointData();
+            newJointData.motorIndex = i;
+            newJointData.angle = _hingeJoints[i].angle;
+            newJointData.axis = _hingeJoints[i].axis;
+            newJointData.currentForce = _hingeJoints[i].currentForce;
+            newJointData.currentTorque = _hingeJoints[i].currentTorque;
+            newJointData.velocity = _hingeJoints[i].velocity;
+
+            sensorData.jointData[i] = newJointData;
+        }
+        /*
+#if !UNITY_EDITOR && UNITY_WEBGL
+        GetSensorData(JsonUtility.ToJson(sensorData));
+#endif
+        */
     }
 
 }

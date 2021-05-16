@@ -12,7 +12,12 @@ public class FPS : MonoBehaviour
     void Start()
     {
         _fps = GetComponent<Text>();
-        InvokeRepeating("UpdateFPS", 0, 0.2f);
+        //InvokeRepeating("UpdateFPS", 0, 0.2f);
+    }
+
+    private void Update()
+    {
+        _fps.text = (1 / Time.deltaTime).ToString("0");
     }
 
     private void UpdateFPS()

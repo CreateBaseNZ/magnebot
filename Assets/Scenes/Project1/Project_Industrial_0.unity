@@ -619,6 +619,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!59 &279919724 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 5700995723845304147, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+  m_PrefabInstance: {fileID: 3787099513325323666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &287590423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1209,6 +1214,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!59 &433566419 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 6690020090217401863, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+  m_PrefabInstance: {fileID: 3787099513325323666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &494089896
 GameObject:
   m_ObjectHideFlags: 0
@@ -2902,6 +2912,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 953559736}
   m_Mesh: {fileID: -5089358812834014913, guid: d0b7be57daecc214fb92ddb5671e2bde, type: 3}
+--- !u!59 &977652402 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 4458424434305038966, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+  m_PrefabInstance: {fileID: 3787099513325323666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1088244187 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7921954276207858558, guid: 9bfc07b08cee9644ba60907d86609148, type: 3}
@@ -3537,6 +3552,34 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286841599}
   m_Mesh: {fileID: 3797836381572427246, guid: d0b7be57daecc214fb92ddb5671e2bde, type: 3}
+--- !u!1 &1293867620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1080678820695912434, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+  m_PrefabInstance: {fileID: 3787099513325323666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1293867621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1293867620}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649054f123046bc48aa1665e8f7e751a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hingeJoints:
+  - {fileID: 1592193764}
+  - {fileID: 279919724}
+  - {fileID: 977652402}
+  - {fileID: 433566419}
+  target:
+  - 0
+  - 0
+  - 0
+  - 0
+  gain: 4
 --- !u!1 &1359582394
 GameObject:
   m_ObjectHideFlags: 0
@@ -3907,6 +3950,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!59 &1592193764 stripped
+HingeJoint:
+  m_CorrespondingSourceObject: {fileID: 2672461088707419573, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+  m_PrefabInstance: {fileID: 3787099513325323666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1601823602
 GameObject:
   m_ObjectHideFlags: 0
@@ -4647,13 +4695,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: RoboticArm
       objectReference: {fileID: 0}
+    - target: {fileID: 1080678820695912435, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672461088707419572, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_Mass
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672461088707419572, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672461088707419572, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2672461088707419572, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672461088707419573, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseMotor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672461088707419573, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseLimits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2672461088707419573, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: -0.00020000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2672461088707419573, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_Limits.bounceMinVelocity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3334505793781695706, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_CollisionDetection
@@ -4684,12 +4760,40 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4458424434305038960, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458424434305038960, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458424434305038960, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458424434305038960, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458424434305038966, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseMotor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458424434305038966, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseLimits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4458424434305038966, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_ConnectedAnchor.x
-      value: -2.7226537e-16
+      value: -2.722654e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458424434305038966, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 0.061161593
+      objectReference: {fileID: 0}
+    - target: {fileID: 4458424434305038966, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_Limits.bounceMinVelocity
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 5089431824655307128, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_TagString
@@ -4724,12 +4828,44 @@ PrefabInstance:
       value: 0.004269645
       objectReference: {fileID: 0}
     - target: {fileID: 5700995723845304146, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_Mass
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700995723845304146, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700995723845304146, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700995723845304146, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700995723845304147, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseMotor
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700995723845304147, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseLimits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5700995723845304147, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_ConnectedAnchor.x
       value: 3.0573658e-17
+      objectReference: {fileID: 0}
+    - target: {fileID: 5700995723845304147, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_Limits.bounceMinVelocity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250342242278530732, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6250342242278530732, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6250342242278530732, guid: bebca4bd5dcfd01459dd9587e87d4712, type: 3}
       propertyPath: m_CollisionDetection
