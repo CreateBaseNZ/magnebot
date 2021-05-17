@@ -10,7 +10,7 @@ public class ArmController : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 30;
+        Application.targetFrameRate = 1000;
     }
 
 

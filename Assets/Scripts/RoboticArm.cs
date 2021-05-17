@@ -91,6 +91,10 @@ public class RoboticArm : MonoBehaviour
             var newJointData = new JointData();
             newJointData.motorIndex = i;
             newJointData.angle = _hingeJoints[i].angle;
+            if(i == 3)
+            {
+                Debug.Log(_hingeJoints[i].angle);
+            }
             newJointData.axis = _hingeJoints[i].axis;
             newJointData.currentForce = _hingeJoints[i].currentForce;
             newJointData.currentTorque = _hingeJoints[i].currentTorque;
@@ -98,11 +102,11 @@ public class RoboticArm : MonoBehaviour
 
             sensorData.jointData[i] = newJointData;
         }
-        /*
+        
 #if !UNITY_EDITOR && UNITY_WEBGL
         GetSensorData(JsonUtility.ToJson(sensorData));
 #endif
-        */
+        
     }
 
 }
