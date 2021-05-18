@@ -32,14 +32,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F1))
-        {
-            Pause();
-        }
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            Resume();
-        }
     }
 
     public void Pause()
