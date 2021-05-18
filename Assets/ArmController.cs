@@ -8,22 +8,10 @@ public class ArmController : MonoBehaviour
     [Range(-90,90)]public List<float> target;
     public float gain = 1f;
 
-    private void Awake()
-    {
-        Application.targetFrameRate = 1000;
-    }
-
-
     // Start is called before the first frame update
     void Start()
     {
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
@@ -31,7 +19,7 @@ public class ArmController : MonoBehaviour
         for (int i = 0; i < hingeJoints.Count; i++)
         {
             var error = target[i] - hingeJoints[i].angle;
-
+            Debug.Log("Motor " + i + ": target: " + hingeJoints[i].angle);
             var newMotor = new JointMotor();
             var vel = error * gain;
             if (error < 10)
