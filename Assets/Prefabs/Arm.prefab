@@ -431,7 +431,7 @@ GameObject:
   - component: {fileID: 5293542778565983258}
   - component: {fileID: 5293542778565983259}
   m_Layer: 0
-  m_Name: 'RoboticArm '
+  m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -445,7 +445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5293542778565983260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.53, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2234224559401179871}
@@ -467,18 +467,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5293542778565983260}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7a6b9717b94723c45ac197cfbd7b6f39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hingeJoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7106499369648115286}
+  - {fileID: 8051784468267071190}
+  - {fileID: 2714450927104089071}
+  - {fileID: 3788182349576926930}
+  - {fileID: 7571616681814705653}
+  - {fileID: 8500723925637697040}
 --- !u!114 &5293542778565983259
 MonoBehaviour:
   m_ObjectHideFlags: 0

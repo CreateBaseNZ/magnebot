@@ -19,7 +19,6 @@ public class ArmController : MonoBehaviour
         for (int i = 0; i < hingeJoints.Count; i++)
         {
             var error = target[i] - hingeJoints[i].angle;
-            Debug.Log("Motor " + i + ": target: " + hingeJoints[i].angle);
             var newMotor = new JointMotor();
             var vel = error * gain;
             if (error < 10)
@@ -41,7 +40,6 @@ public class ArmController : MonoBehaviour
 
             hingeJoints[i].motor = newMotor;
             hingeJoints[i].useMotor = true;
-            //Debug.Log("Motor " + i + "error: " + error);
         }
     }
 }

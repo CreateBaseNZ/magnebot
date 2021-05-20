@@ -14,7 +14,6 @@ public class RoboticArm : MonoBehaviour
     public HingeJoint[] _hingeJoints;
     private Actuators actuators = new Actuators();
     private SensorData sensorData = new SensorData();
-
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +32,6 @@ public class RoboticArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void SetActuators(string actuatorSpecs)

@@ -680,6 +680,8 @@
         "m_GuidSerialized": "2d48ae33-1518-4481-b6aa-e43e8273ae88"
     },
     "m_Name": "Grid Colour",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Color_16d305488f714c57b794bc8d2d4a5078",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -1129,6 +1131,8 @@
         "m_GuidSerialized": "74888ce4-57dd-47a2-8b6c-6f9e7b55e68d"
     },
     "m_Name": "Line Thickness",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_46d9463106694d3f98e1161f86ad080c",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -2078,6 +2082,8 @@
         "m_GuidSerialized": "fe9a5baf-9aba-4771-a07c-98e2ef5acd76"
     },
     "m_Name": "Tiling",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector2_9bba83896f8f4d038d618e85101e3cbd",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,

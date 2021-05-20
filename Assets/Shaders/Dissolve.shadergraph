@@ -985,6 +985,8 @@
         "m_GuidSerialized": "bb5e9857-8fb8-47cf-9ca1-f391e61ff7e2"
     },
     "m_Name": "Noise Scale",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_570ad983a00e47ca9449386dd4fa1d64",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -1583,6 +1585,8 @@
         "m_GuidSerialized": "86194d4f-2a2f-4aa3-985f-704db6ba3224"
     },
     "m_Name": "Edge Colour",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Color_bba8bb97efb14095a7e507aa2b5a510c",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
@@ -1876,6 +1880,8 @@
         "m_GuidSerialized": "b594308f-6bcf-4db5-a222-0cfce76c69e7"
     },
     "m_Name": "Edge Width",
+    "m_DefaultRefNameVersion": 0,
+    "m_RefNameGeneratedByDisplayName": "",
     "m_DefaultReferenceName": "Vector1_ffd94c3b74bc4aba962e10311263220e",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
