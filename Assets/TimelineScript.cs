@@ -26,6 +26,10 @@ public class TimelineScript : MonoBehaviour
         {
             SwapArms();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            _playableDirector.time = _playableDirector.duration;
+        }
     }
 
     void SwapArms()
