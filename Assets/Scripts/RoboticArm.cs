@@ -96,11 +96,18 @@ public class RoboticArm : MonoBehaviour
 
             sensorData.jointData[i] = newJointData;
         }
-        
+
 #if !UNITY_EDITOR && UNITY_WEBGL
-        GetSensorData(JsonUtility.ToJson(sensorData));
+        try
+        {
+            GetSensorData(JsonUtility.ToJson(sensorData));
+        }
+        catch (Exception)
+        {
+            Debug.Log("Cannot get sensor data");
+        }
 #endif
-        
+
     }
 
 }

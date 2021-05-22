@@ -194,6 +194,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arm
       objectReference: {fileID: 0}
+    - target: {fileID: 5479228223282577714, guid: cdf9528073217c5498cf9a36f00c992e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571616681814705654, guid: cdf9528073217c5498cf9a36f00c992e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500723925637697041, guid: cdf9528073217c5498cf9a36f00c992e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cdf9528073217c5498cf9a36f00c992e, type: 3}
 --- !u!1001 &1937106928118276058

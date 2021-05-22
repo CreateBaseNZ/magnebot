@@ -18,6 +18,9 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _currentZoom = 36.7999f;
+        _currentYaw = -149.2203f;
+        _currentPitch = 7.727794f;
     }
 
     // Update is called once per frame
@@ -33,6 +36,7 @@ public class CameraController : MonoBehaviour
         }
         _currentYaw += Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
         _currentPitch -= Input.GetAxis("Vertical") * pitchSpeed * Time.deltaTime;
+
     }
 
     private void LateUpdate()

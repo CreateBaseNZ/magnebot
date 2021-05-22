@@ -5,14 +5,12 @@ using System.Linq;
 
 public class ObjectiveGroup : MonoBehaviour
 {
-    private int _initialObjectiveNumber;
-    private List<GameObject> _objectives;
+    private int _numberOfObjectives;
 
     // Start is called before the first frame update
     void Start()
     {
-        _objectives = GetComponentsInChildren<Objective>().Select(s => s.transform.parent.gameObject).ToList();
-        _initialObjectiveNumber = _objectives.Count();
+        _numberOfObjectives = GetComponentsInChildren<Objective>().Select(s => s.transform.parent.gameObject).Count();
     }
 
     // Update is called once per frame
@@ -24,10 +22,10 @@ public class ObjectiveGroup : MonoBehaviour
     public void RemoveObjective(Objective obj)
     {
         obj.gameObject.SetActive(false);
-    }
-
-    public float GetObjectiveNumber()
-    {
-        return _objectives.Select(s => s.activeSelf).Count();
+        _numberOfObjectives--;
+        if(_numberOfObjectives == 0)
+        {
+            GameController.Instance.GameWin();
+        }
     }
 }

@@ -18,20 +18,12 @@ public class GameController : MonoBehaviour
         }
     }
 
-    Animation anim;
-
     // Start is called before the first frame update
     void Start()
     {
 #if !UNITY_EDITOR && UNITY_WEBGL
         WebGLInput.captureAllKeyboardInput = false;
 #endif
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 
     public void Pause()
@@ -42,6 +34,16 @@ public class GameController : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = 1;
+    }
+
+    public void GameWin()
+    {
+
+    }
+
+    public void GameLose()
+    {
+
     }
 
     // This function will be called from the webpage
