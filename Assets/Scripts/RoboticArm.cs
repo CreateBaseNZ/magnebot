@@ -98,16 +98,8 @@ public class RoboticArm : MonoBehaviour
         }
 
 #if !UNITY_EDITOR && UNITY_WEBGL
-        try
-        {
             GetSensorData(JsonUtility.ToJson(sensorData));
-        }
-        catch (Exception)
-        {
-            Debug.Log("Cannot get sensor data");
-        }
 #endif
-
     }
 
 }

@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Project1/Project_Industrial_Test.unity
-    guid: b5c146c0b9f62aa4ca4239371c00360d
+    path: Assets/Scenes/Project1/Project_Industrial_0.unity
+    guid: bd79772f573338343a9970eb451a8d9a
   - enabled: 1
     path: Assets/Scenes/Project1/Training_Arm_0.unity
     guid: 25e384a9af32a564086b034af1e349bc

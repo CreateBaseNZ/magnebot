@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Runtime.InteropServices;
 
 public class GameController : MonoBehaviour
 {
+    [DllImport("__Internal")]
+    private static extern void GetGameState(string gameState);
+
     private static GameController _instance;
     public static GameController Instance { get { return _instance; } }
     private void Awake()
@@ -23,6 +27,7 @@ public class GameController : MonoBehaviour
     {
 #if !UNITY_EDITOR && UNITY_WEBGL
         WebGLInput.captureAllKeyboardInput = false;
+        GetGameState("Play");
 #endif
     }
 
@@ -38,12 +43,16 @@ public class GameController : MonoBehaviour
 
     public void GameWin()
     {
-
+#if !UNITY_EDITOR && UNITY_WEBGL
+        GetGameState("Win");
+#endif
     }
 
     public void GameLose()
     {
-
+#if !UNITY_EDITOR && UNITY_WEBGL
+            GetGameState("Lose");
+#endif
     }
 
     // This function will be called from the webpage
