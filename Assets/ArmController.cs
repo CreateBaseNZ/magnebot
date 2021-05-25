@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArmController : MonoBehaviour
 {
     public List<HingeJoint> hingeJoints;
-    [Range(-180,180)]public List<float> targets;
+    [Range(-180, 180)] public List<float> targets;
     public float gain = 1f;
 
     // Start is called before the first frame update
@@ -42,6 +42,7 @@ public class ArmController : MonoBehaviour
             hingeJoints[i].useMotor = true;
         }
     }
+
 
     private void OnEnable()
     {

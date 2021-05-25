@@ -18,7 +18,7 @@ public class ClawController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var angle = closeClaw ? -5 : 50;
+        var angle = closeClaw ? -5 : 70;
         leftClaw.motor = CreateMotor(angle, leftClaw.angle);
         leftClaw.useMotor = true;
 

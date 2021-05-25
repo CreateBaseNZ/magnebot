@@ -13,7 +13,7 @@ public class HoverInfo : MonoBehaviour
 
     private void Start()
     {
-        _textInfo = label.GetComponent<TMP_Text>();
+        _textInfo = label.GetComponentInChildren<TMP_Text>();
     }
 
     private void OnMouseOver()
@@ -24,7 +24,7 @@ public class HoverInfo : MonoBehaviour
         {
             label.gameObject.SetActive(true);
         }
-        label.anchoredPosition = (new Vector2(Screen.width, Screen.height) / _referenceSize) * _screenCoord;
+        label.anchoredPosition = _screenCoord;
         _textInfo.text = gameObject.transform.position.ToString();
     }
 
