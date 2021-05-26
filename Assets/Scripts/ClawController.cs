@@ -36,4 +36,14 @@ public class ClawController : MonoBehaviour
 
         return newMotor;
     }
+
+    public void OpenClaw()
+    {
+        closeClaw = false;
+    }
+
+    public void CloseClaw()
+    {
+        closeClaw = true;
+    }
 }

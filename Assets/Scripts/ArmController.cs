@@ -60,7 +60,7 @@ public class ArmController : MonoBehaviour
             {
                 vel *= 0.2f;
             }
-            newMotor.targetVelocity = Mathf.Clamp(vel, -25,25);
+            newMotor.targetVelocity = Mathf.Clamp(vel, -25, 25);
 
 
             newMotor.force = 1000000;
