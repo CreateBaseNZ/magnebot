@@ -19,19 +19,14 @@ public class GravityClaw : MonoBehaviour
         if (dropObject)
         {
             var list = GetComponentsInChildren<Transform>().ToList();
-            list.RemoveAt(0);
-            list[0].gameObject.GetComponent<Rigidbody>().isKinematic = false;
+            list[0].gameObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
             list[0].transform.parent = null;
-            dropObject = false;
             GetComponent<SphereCollider>().enabled = false;
-            Invoke("EnableCollider", 2);
-
         }
-    }
-
-    private void EnableCollider()
-    {
-        GetComponent<SphereCollider>().enabled = true;
+        else
+        {
+            GetComponent<SphereCollider>().enabled = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,6 +40,11 @@ public class GravityClaw : MonoBehaviour
     }
 
     public void DisableGravitySphere()
+    {
+        dropObject = true;
+    }
+
+    public void EnableGravitySphere()
     {
         dropObject = false;
     }

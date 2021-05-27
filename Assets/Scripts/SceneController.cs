@@ -42,10 +42,6 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            LoadScene(sceneName);
-        }
     }
 
     public void LoadScene(string sceneName)
@@ -67,6 +63,6 @@ public class SceneController : MonoBehaviour
 
     public void ResetScene()
     {
-        LoadScene(_currentScene);
+        LoadScene(SceneManager.GetActiveScene().name);
     }
 }

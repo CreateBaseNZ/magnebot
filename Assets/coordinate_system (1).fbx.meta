@@ -1,9 +1,34 @@
 fileFormatVersion: 2
-guid: 44796c0f475f09f4ba6cf977354c4d18
+guid: aadc90c177d63744a9d08766bceca3e4
 ModelImporter:
   serializedVersion: 21100
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Axis y
+    second: {fileID: 2100000, guid: 527661d8700b2c7438cc155da7b8dba0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axis X
+    second: {fileID: 2100000, guid: 0c182898b37718241b40888592d67f1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: axis Z
+    second: {fileID: 2100000, guid: 76f16f892ea7caf41b16c71286ed4ae5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: text colour white
+    second: {fileID: 2100000, guid: d33d2a07c862e5e489f0696b67866253, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: white
+    second: {fileID: 2100000, guid: b5c105e5cf3946b40a44b71781b371c9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
