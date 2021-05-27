@@ -3,7 +3,7 @@
 ### Unity Installation
 1. Download and install Unity Hub https://unity3d.com/get-unity/download
 2. Within Unity Hub, navigate to the _Installs_ tab and click _Add_
-3. Select Unity version _2020.3.xf1 (LTS)_ and click _Next_
+3. Select Unity version _2021.1.xf1 (LTS)_ and click _Next_
 4. Include the module _WebGL Build Support_ and click _Done_
 
 ### Project setup
