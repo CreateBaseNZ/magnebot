@@ -29,6 +29,7 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Application.targetFrameRate = 1000;
         _currentScene = SceneManager.GetActiveScene().name;
         for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
         {
@@ -50,8 +51,8 @@ public class SceneController : MonoBehaviour
         {
             if (sceneName.ToLower().Contains("training"))
             {
-                SceneManager.LoadScene("Training_Base_0");
-                SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+                SceneManager.LoadScene(sceneName);
+                SceneManager.LoadScene("Training_Base_0", LoadSceneMode.Additive);
             }
             else
             {
@@ -63,6 +64,7 @@ public class SceneController : MonoBehaviour
 
     public void ResetScene()
     {
-        LoadScene(SceneManager.GetActiveScene().name);
+        LoadScene(_currentScene);
     }
+
 }

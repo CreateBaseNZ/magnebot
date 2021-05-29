@@ -10,7 +10,7 @@ public class GravityClaw : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,8 +19,16 @@ public class GravityClaw : MonoBehaviour
         if (dropObject)
         {
             var list = GetComponentsInChildren<Transform>().ToList();
-            list[0].gameObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
-            list[0].transform.parent = null;
+            var rb = list[0].gameObject.GetComponentInChildren<Rigidbody>();
+
+            if (rb)
+            {
+                rb.isKinematic = false;
+            }
+            if (list.Count > 1)
+            {
+                list[1].transform.parent = null;
+            }
             GetComponent<SphereCollider>().enabled = false;
         }
         else
@@ -31,11 +39,18 @@ public class GravityClaw : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag.ToLower().Contains("objective"))
+        if (isActiveAndEnabled)
         {
-            other.transform.parent = gameObject.transform;
-            other.transform.localPosition = Vector3.zero;
-            other.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            if (other.tag.ToLower().Contains("objective"))
+            {
+                other.transform.parent = gameObject.transform;
+                other.transform.localPosition = Vector3.zero;
+                var rb = other.gameObject.GetComponent<Rigidbody>();
+                if (rb)
+                {
+                    rb.isKinematic = true;
+                }
+            }
         }
     }
 
