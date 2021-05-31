@@ -21,6 +21,7 @@ public class ArmController : MonoBehaviour
         L = (hingeJoints[2].transform.TransformPoint(hingeJoints[2].connectedAnchor) - hingeJoints[1].transform.TransformPoint(hingeJoints[1].anchor)).magnitude;
         M = (hingeJoints[3].transform.TransformPoint(hingeJoints[3].anchor) - hingeJoints[2].transform.TransformPoint(hingeJoints[2].anchor)).magnitude;
         N = -0.5f;
+
     }
 
     private void FixedUpdate()
@@ -98,5 +99,4 @@ public class ArmController : MonoBehaviour
             targets[i] = hingeJoints[i].angle;
         }
     }
-
 }

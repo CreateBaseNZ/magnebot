@@ -78,9 +78,9 @@ Material:
     m_Ints: []
     m_Floats:
     - Amplitude: 2
-    - EndTimeSecondary: 12.8
+    - EndTimeSecondary: 0
     - Frequency: 1.2
-    - StartTimeSecondary: 11.01
+    - StartTimeSecondary: 0
     - Vector1_570ad983a00e47ca9449386dd4fa1d64: 20
     - Vector1_ffd94c3b74bc4aba962e10311263220e: 0.05
     - _AlphaClip: 0
@@ -113,7 +113,7 @@ Material:
     m_Colors:
     - Color_bba8bb97efb14095a7e507aa2b5a510c: {r: 0.34170642, g: 2.9960785, b: 0, a: 0}
     - PrimaryColor: {r: 0, g: 0.5075585, b: 1, a: 0}
-    - SecondaryColor: {r: 1, g: 0, b: 0, a: 0}
+    - SecondaryColor: {r: 0, g: 0.5058824, b: 1, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0, g: 0.67173004, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

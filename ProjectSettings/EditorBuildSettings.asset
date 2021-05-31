@@ -9,11 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Project1/Default.unity
     guid: ccb30b0ce31847d4d8188ca288dd270d
   - enabled: 1
-    path: Assets/Scenes/Project1/Project_Industrial_0.unity
-    guid: bd79772f573338343a9970eb451a8d9a
-  - enabled: 1
     path: Assets/Scenes/Project1/Project_Industrial_1.unity
-    guid: 4c91bbd0a7d631249873b907ecd1d0e8
+    guid: f488dc7f96c5a9b4bb8b9f5905800717
   - enabled: 1
     path: Assets/Scenes/Project1/Training_Base_0.unity
     guid: 96e95f85027b92741989c366e5443521
