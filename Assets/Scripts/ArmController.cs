@@ -30,50 +30,53 @@ public class ArmController : MonoBehaviour
 
         for (int i = 0; i < hingeJoints.Count; i++)
         {
-            var refAngles = targets.Select(a => ((a + 180) % 360) - 180).ToArray();
-
-            var error = refAngles[i] - hingeJoints[i].angle;
-            var absError = Mathf.Abs(error);
-            var errorCheck = refAngles[i] - hingeJoints[i].angle + 360;
-            if (Mathf.Abs(errorCheck) < absError)
+            if (hingeJoints[i] != null)
             {
-                error = errorCheck;
-                absError = Mathf.Abs(errorCheck);
-            }
-            errorCheck = refAngles[i] - hingeJoints[i].angle - 360;
-            if (Mathf.Abs(errorCheck) < absError)
-            {
-                error = errorCheck;
-                absError = Mathf.Abs(errorCheck);
-            }
+                var refAngles = targets.Select(a => ((a + 180) % 360) - 180).ToArray();
 
-            var newMotor = new JointMotor();
-            var vel = error * gain;
-            if (error < 10)
-            {
-                vel *= 0.8f;
-            }
-            else if (error < 5)
-            {
-                vel *= 0.4f;
-            }
-            else if (error < 2)
-            {
-                vel *= 0.2f;
-            }
-            newMotor.targetVelocity = Mathf.Clamp(vel, -25, 25);
+                var error = refAngles[i] - hingeJoints[i].angle;
+                var absError = Mathf.Abs(error);
+                var errorCheck = refAngles[i] - hingeJoints[i].angle + 360;
+                if (Mathf.Abs(errorCheck) < absError)
+                {
+                    error = errorCheck;
+                    absError = Mathf.Abs(errorCheck);
+                }
+                errorCheck = refAngles[i] - hingeJoints[i].angle - 360;
+                if (Mathf.Abs(errorCheck) < absError)
+                {
+                    error = errorCheck;
+                    absError = Mathf.Abs(errorCheck);
+                }
+
+                var newMotor = new JointMotor();
+                var vel = error * gain;
+                if (error < 10)
+                {
+                    vel *= 0.8f;
+                }
+                else if (error < 5)
+                {
+                    vel *= 0.4f;
+                }
+                else if (error < 2)
+                {
+                    vel *= 0.2f;
+                }
+                newMotor.targetVelocity = Mathf.Clamp(vel, -25, 25);
 
 
-            newMotor.force = 1000000;
+                newMotor.force = 1000000;
 
-            hingeJoints[i].motor = newMotor;
-            hingeJoints[i].useMotor = true;
+                hingeJoints[i].motor = newMotor;
+                hingeJoints[i].useMotor = true;
+            }
         }
     }
 
     public void InverseKinematics()
     {
-        var t = new Vector3(-ikTarget.z, ikTarget.y-2.5f, -ikTarget.x);
+        var t = new Vector3(-ikTarget.z, ikTarget.y - 2.5f, -ikTarget.x);
         var R = Mathf.Sqrt(Mathf.Pow(t.x, 2) + Mathf.Pow(t.z, 2));
         var s = R - N;
 

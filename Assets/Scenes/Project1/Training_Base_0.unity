@@ -749,6 +749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 241f17fc2087b4e48b4165cfc0266ea9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameState: 0
 --- !u!4 &1232713463
 Transform:
   m_ObjectHideFlags: 0
@@ -1894,7 +1895,7 @@ MonoBehaviour:
   offset: {x: 1, y: -0.75, z: 0}
   zoomSpeed: 4
   minZoom: 5
-  maxZoom: 30
+  maxZoom: 70
   yawSpeed: 70
   pitchSpeed: 70
 --- !u!81 &2142700588
@@ -1930,7 +1931,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 45
+  field of view: 25
   orthographic: 0
   orthographic size: 5
   m_Depth: 100

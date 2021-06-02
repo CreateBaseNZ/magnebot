@@ -10,6 +10,16 @@ public class GameController : MonoBehaviour
 
     private static GameController _instance;
     public static GameController Instance { get { return _instance; } }
+
+    public GameState gameState = GameState.PLAY;
+
+    public enum GameState
+    {
+        PLAY = 0,
+        WIN = 1,
+        LOSE = 2
+    }
+
     private void Awake()
     {
         Application.targetFrameRate = 1000;
@@ -44,16 +54,24 @@ public class GameController : MonoBehaviour
 
     public void GameWin()
     {
+        if (gameState == GameState.PLAY)
+        {
+            gameState = GameState.WIN;
 #if !UNITY_EDITOR && UNITY_WEBGL
         GetGameState("Win");
 #endif
+        }
     }
 
     public void GameLose()
     {
+        if (gameState == GameState.PLAY)
+        {
+            gameState = GameState.LOSE;
 #if !UNITY_EDITOR && UNITY_WEBGL
             GetGameState("Lose");
 #endif
+        }
     }
 
     // This function will be called from the webpage
@@ -68,6 +86,5 @@ public class GameController : MonoBehaviour
 #endif
 
     }
-
 
 }

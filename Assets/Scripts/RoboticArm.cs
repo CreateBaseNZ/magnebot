@@ -89,21 +89,27 @@ public class RoboticArm : MonoBehaviour
             newMotor.targetVelocity = actuators.motors[i].targetVelocity;
             newMotor.freeSpin = actuators.motors[i].freeSpin;
 
-            _hingeJoints[actuators.motors[i].motorIndex].motor = newMotor;
-            _hingeJoints[actuators.motors[i].motorIndex].useMotor = true;
+            if (_hingeJoints[actuators.motors[i].motorIndex] != null)
+            {
+                _hingeJoints[actuators.motors[i].motorIndex].motor = newMotor;
+                _hingeJoints[actuators.motors[i].motorIndex].useMotor = true;
+            }
         }
 
         for (int i = 0; i < Mathf.Min(_hingeJoints.Length, actuators.motors.Count); i++)
         {
-            var newJointData = new JointData();
-            newJointData.motorIndex = i;
-            newJointData.angle = _hingeJoints[i].angle;
-            newJointData.axis = _hingeJoints[i].axis;
-            newJointData.currentForce = _hingeJoints[i].currentForce;
-            newJointData.currentTorque = _hingeJoints[i].currentTorque;
-            newJointData.velocity = _hingeJoints[i].velocity;
+            if (_hingeJoints[i] != null)
+            {
+                var newJointData = new JointData();
+                newJointData.motorIndex = i;
+                newJointData.angle = _hingeJoints[i].angle;
+                newJointData.axis = _hingeJoints[i].axis;
+                newJointData.currentForce = _hingeJoints[i].currentForce;
+                newJointData.currentTorque = _hingeJoints[i].currentTorque;
+                newJointData.velocity = _hingeJoints[i].velocity;
 
-            sensorData.jointData[i] = newJointData;
+                sensorData.jointData[i] = newJointData;
+            }
         }
 
 #if !UNITY_EDITOR && UNITY_WEBGL
@@ -111,4 +117,5 @@ public class RoboticArm : MonoBehaviour
 #endif
     }
 
+    
 }

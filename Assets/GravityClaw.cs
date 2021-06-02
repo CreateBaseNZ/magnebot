@@ -6,11 +6,19 @@ using System.Linq;
 public class GravityClaw : MonoBehaviour
 {
     public bool dropObject = false;
+    public Material shader;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        if (dropObject)
+        {
+            DisableGravitySphere();
+        }
+        else
+        {
+            EnableGravitySphere();
+        }
     }
 
     // Update is called once per frame
@@ -57,10 +65,21 @@ public class GravityClaw : MonoBehaviour
     public void DisableGravitySphere()
     {
         dropObject = true;
+        shader.SetFloat("Speed", 0);
+        shader.SetColor("Base_Color", Color.black);
+        shader.SetFloat("Line_Transparency", 0.01f);
+        shader.SetColor("Glow_Colour", new Color(0.8f, 0.8f, 0.8f) * 5);
+        shader.SetFloat("Line_Thickness", 0.02f);
+
     }
 
     public void EnableGravitySphere()
     {
         dropObject = false;
+        shader.SetFloat("Speed", 2);
+        shader.SetColor("Base_Color", Color.white);
+        shader.SetFloat("Line_Transparency", 1);
+        shader.SetColor("Glow_Colour", new Color(3f / 255f, 191f / 255f, 0) * 8);
+        shader.SetFloat("Line_Thickness", 0.12f);
     }
 }

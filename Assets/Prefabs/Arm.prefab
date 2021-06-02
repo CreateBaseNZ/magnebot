@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 2714450927104089040}
   - component: {fileID: 2714450927104089041}
   - component: {fileID: 2714450927104089071}
+  - component: {fileID: 2508777064463530185}
   m_Layer: 0
   m_Name: Arm2
   m_TagString: Untagged
@@ -261,12 +262,24 @@ HingeJoint:
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
-  m_BreakForce: Infinity
+  m_BreakForce: 100000
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &2508777064463530185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2714450927104089042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8b2591aef9158479c1e040dafb7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3788182349576926931
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,6 +294,7 @@ GameObject:
   - component: {fileID: 3788182349576926928}
   - component: {fileID: 3788182349576926929}
   - component: {fileID: 3788182349576926930}
+  - component: {fileID: 3069102302169734389}
   m_Layer: 0
   m_Name: Arm3
   m_TagString: Untagged
@@ -413,12 +427,24 @@ HingeJoint:
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
-  m_BreakForce: Infinity
+  m_BreakForce: 8000
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &3069102302169734389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3788182349576926931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8b2591aef9158479c1e040dafb7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &4780003686969174806
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -444,12 +470,24 @@ FixedJoint:
   m_GameObject: {fileID: 4152392379024782007}
   m_ConnectedBody: {fileID: 3788182349576926929}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_BreakForce: Infinity
+  m_BreakForce: 8000
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &835033818926839057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4152392379024782007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8b2591aef9158479c1e040dafb7912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5293542778565983260
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1275,7 @@ SphereCollider:
   m_GameObject: {fileID: 5479228223282577714}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -1254,6 +1292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropObject: 0
+  shader: {fileID: 2100000, guid: 2c6a420d5071d6249ad2a02ff1a7fb59, type: 2}
 --- !u!1 &7106499369648115289
 GameObject:
   m_ObjectHideFlags: 0

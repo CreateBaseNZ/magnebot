@@ -827,7 +827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3681113863295963499}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: 6, y: 0.48, z: -4}
+  m_LocalPosition: {x: 6, y: 0.48, z: 0}
   m_LocalScale: {x: 200, y: 200, z: 200}
   m_Children:
   - {fileID: 1477645410}
@@ -846,7 +846,6 @@ GameObject:
   - component: {fileID: 2878051092475540462}
   - component: {fileID: 110756548969002360}
   - component: {fileID: 3681113863295963500}
-  - component: {fileID: 3681113863295963501}
   - component: {fileID: 3681113863295963502}
   m_Layer: 0
   m_Name: Bin 1
@@ -869,20 +868,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8401722567973382144, guid: 9bfc07b08cee9644ba60907d86609148, type: 3}
---- !u!114 &3681113863295963501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3681113863295963499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e512ab498c602e84983b2d36cd799bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  point: {x: 0, y: 0, z: 8}
-  time: 3
 --- !u!114 &3681113863295963502
 MonoBehaviour:
   m_ObjectHideFlags: 0

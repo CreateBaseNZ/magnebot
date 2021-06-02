@@ -5,6 +5,7 @@ using UnityEngine;
 public class Objective : MonoBehaviour
 {
     public float stayTime = 0f;
+    public GameObject collectEffect;
     private float _currentStayTime = 0f;
     private ObjectiveGroup _objectiveGroup;
 
@@ -56,6 +57,10 @@ public class Objective : MonoBehaviour
             _currentStayTime += Time.deltaTime;
             if(_currentStayTime >= stayTime)
             {
+                if (collectEffect != null)
+                {
+                    Instantiate(collectEffect, other.transform);
+                }
                 _objectiveGroup.RemoveObjective(this);
             }
         }
