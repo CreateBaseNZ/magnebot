@@ -22,7 +22,6 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        Application.targetFrameRate = 1000;
         if (_instance != null && _instance != this)
         {
             Destroy(gameObject);

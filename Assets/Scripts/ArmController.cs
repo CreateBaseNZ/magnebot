@@ -16,12 +16,10 @@ public class ArmController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 20;
         h = (_base.transform.position - hingeJoints[0].transform.TransformPoint(hingeJoints[0].connectedAnchor)).magnitude;
         L = (hingeJoints[2].transform.TransformPoint(hingeJoints[2].connectedAnchor) - hingeJoints[1].transform.TransformPoint(hingeJoints[1].anchor)).magnitude;
         M = (hingeJoints[3].transform.TransformPoint(hingeJoints[3].anchor) - hingeJoints[2].transform.TransformPoint(hingeJoints[2].anchor)).magnitude;
         N = -0.5f;
-
     }
 
     private void FixedUpdate()
@@ -53,7 +51,7 @@ public class ArmController : MonoBehaviour
                 var vel = error * gain;
                 if (error < 10)
                 {
-                    vel *= 0.8f;
+                    vel *= 1.2f;
                 }
                 else if (error < 5)
                 {
@@ -63,10 +61,10 @@ public class ArmController : MonoBehaviour
                 {
                     vel *= 0.2f;
                 }
-                newMotor.targetVelocity = Mathf.Clamp(vel, -25, 25);
+                newMotor.targetVelocity = Mathf.Clamp(vel, -50, 50);
 
 
-                newMotor.force = 1000000;
+                newMotor.force = Mathf.Infinity;
 
                 hingeJoints[i].motor = newMotor;
                 hingeJoints[i].useMotor = true;

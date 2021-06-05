@@ -9,6 +9,8 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController Instance { get { return _instance; } }
     public string sceneName;
+    public List<Animator> transitions;
+    public float transitionTime = 1f;
 
     private static SceneController _instance;
     private string _currentScene;
@@ -16,6 +18,8 @@ public class SceneController : MonoBehaviour
 
     private void Awake()
     {
+        Application.targetFrameRate = 240;
+
         if (_instance != null && _instance != this)
         {
             Destroy(gameObject);
@@ -29,7 +33,6 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Application.targetFrameRate = 1000;
         _currentScene = SceneManager.GetActiveScene().name;
         for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
         {
@@ -43,11 +46,30 @@ public class SceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            LoadScene(sceneName);
+        }
+    }
+
+    public void ResetScene()
+    {
+        LoadScene(_currentScene);
     }
 
     public void LoadScene(string sceneName)
     {
-        if (scenesInBuild.Contains(sceneName.ToLower())) 
+        StartCoroutine(LoadLevel(sceneName));
+    }
+
+    private IEnumerator LoadLevel(string sceneName)
+    {
+        transitions.ForEach(f => f.SetTrigger("Start"));
+
+        yield return new WaitForSeconds(transitionTime);
+
+
+        if (scenesInBuild.Contains(sceneName.ToLower()))
         {
             if (sceneName.ToLower().Contains("training"))
             {
@@ -60,11 +82,6 @@ public class SceneController : MonoBehaviour
             }
             _currentScene = sceneName;
         }
-    }
-
-    public void ResetScene()
-    {
-        LoadScene(_currentScene);
     }
 
 }
