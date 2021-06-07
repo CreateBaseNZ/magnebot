@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 1430645427785543366}
   - component: {fileID: 4962190079026594124}
   - component: {fileID: 4835532540651003069}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 1703835856427972051}
   - component: {fileID: 915709079217326388}
   - component: {fileID: 7174902778938759139}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 1174999809504739503}
   - component: {fileID: 7521439740398761862}
   - component: {fileID: 1975164188196417496}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -341,7 +341,7 @@ GameObject:
   - component: {fileID: 5546611080719438168}
   - component: {fileID: 211400217192396850}
   - component: {fileID: 3377195391747203773}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -388,7 +388,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1000
   m_TargetDisplay: 0
 --- !u!114 &211400217192396850
 MonoBehaviour:

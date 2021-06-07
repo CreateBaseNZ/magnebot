@@ -51,17 +51,17 @@ public class ArmController : MonoBehaviour
                 var vel = error * gain;
                 if (error < 10)
                 {
-                    vel *= 1.5f;
+                    vel *= 2f;
                 }
                 else if (error < 5)
                 {
-                    vel *= 0.8f;
+                    vel *= 1f;
                 }
                 else if (error < 2)
                 {
-                    vel *= 0.2f;
+                    vel *= 0.5f;
                 }
-                newMotor.targetVelocity = Mathf.Clamp(vel, -60, 60);
+                newMotor.targetVelocity = Mathf.Clamp(vel, -100, 100);
 
 
                 newMotor.force = Mathf.Infinity;
