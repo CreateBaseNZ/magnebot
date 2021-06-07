@@ -14,6 +14,14 @@ mergeInto(LibraryManager.library, {
     }
     catch(err) {
     }
+  },
+
+  GetProgressState: function (progress) {
+    try {
+      ReactUnityWebGL.GetProgressState(progress);
+    }
+    catch(err) {
+    }
   }
 
 

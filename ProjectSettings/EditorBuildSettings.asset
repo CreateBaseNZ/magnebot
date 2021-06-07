@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Project1/Training_Arm_1.unity
     guid: 9d4dc2f22ece96944ab1970d595eb43d
+  - enabled: 1
+    path: Assets/Scenes/Project1/Sandbox_Industrial_1.unity
+    guid: a68b65d10fece2844b712c7ff67f0d1d
   m_configObjects: {}

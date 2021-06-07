@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System.Runtime.InteropServices;
 
 public class ObjectiveGroup : MonoBehaviour
 {
     public ObjectiveProgress objectiveProgress;
     private int _initialObjectives;
     private int _numberOfObjectives;
+
+    [DllImport("__Internal")]
+    private static extern void GetProgressState(float progress);
 
     // Start is called before the first frame update
     void Start()
@@ -30,9 +34,16 @@ public class ObjectiveGroup : MonoBehaviour
 
         objectiveProgress.UpdateText(_initialObjectives - _numberOfObjectives, _initialObjectives);
 
+        var progress = (_initialObjectives - _numberOfObjectives) / (float)_initialObjectives;
+
+#if !UNITY_EDITOR && UNITY_WEBGL
+        GetProgressState(progress);
+#endif
+
         if (_numberOfObjectives == 0)
         {
             GameController.Instance.GameWin();
         }
     }
+
 }
