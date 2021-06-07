@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EndEffector
   - Objective0
+  - Obstacle
   layers:
   - Default
   - TransparentFX
