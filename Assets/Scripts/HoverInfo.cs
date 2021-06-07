@@ -27,8 +27,8 @@ public class HoverInfo : MonoBehaviour
         label.anchoredPosition = _screenCoord;
         var position = gameObject.transform.position;
         _textInfo.SetText("(<color=\"red\">" + position.x.ToString("0.0")
-            + "</color>, <color=\"green\">" + position.y.ToString("0.0")
-            + "</color>, <color=#0080FF>" + position.z.ToString("0.0") + "</color>)");
+            + "</color>, <color=\"green\">" + position.z.ToString("0.0")
+            + "</color>, <color=#0080FF>" + position.y.ToString("0.0") + "</color>)");
     }
 
     private void OnMouseExit()
