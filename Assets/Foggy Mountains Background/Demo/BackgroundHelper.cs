@@ -20,8 +20,13 @@ public class BackgroundHelper : MonoBehaviour
         pos += speed;
 
         if (pos > 1.0F)
-
+        {
             pos -= 1.0F;
+        }
+        if(GameController.Instance.gameState != GameController.GameState.PLAY)
+        {
+            speed /= (1+Time.deltaTime);
+        }
 
         image.uvRect = new Rect(pos, 0, 1, 1);
     }

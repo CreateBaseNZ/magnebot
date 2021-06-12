@@ -18,7 +18,7 @@ public class ObstacleController : MonoBehaviour
         cooldown = 3;
         _objPool = new List<GameObject>();
 
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             _objPool.Add(Instantiate(obstaclePrefab));
         }
@@ -28,12 +28,12 @@ public class ObstacleController : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if(time > cooldown)
+        if(time > cooldown && GameController.Instance.gameState == GameController.GameState.PLAY)
         {
-            index = (index + 1) % 3;
+            index = (index + 1) % 4;
             time = 0;
             _objPool[index].SetActive(true);
-            cooldown = Random.Range(2, 4);
+            cooldown = Random.Range(1.5f, 3f);
         }
     }
 }

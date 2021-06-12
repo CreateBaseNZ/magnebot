@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JumpController : MonoBehaviour
 {
+    public float gravityScale = 1f;
     public float jumpForce = 20f;
     private Rigidbody _rigidbody;
     private bool _isJumping;
@@ -18,12 +19,11 @@ public class JumpController : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Physics.Raycast(gameObject.transform.position + new Vector3(3f, 0, 0), Vector3.right, out hit);
-        if(hit.distance < 2)
+        Physics.Raycast(gameObject.transform.position + new Vector3(0.51f, 0, 0), Vector3.right, out hit);
+        if (hit.distance < 0.5 && hit.distance != 0)
         {
             Jump();
         }
-
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
         {
             Jump();
@@ -42,5 +42,14 @@ public class JumpController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         _isJumping = false;
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            GameController.Instance.GameLose();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        _rigidbody.AddForce(Physics.gravity * gravityScale);
     }
 }
