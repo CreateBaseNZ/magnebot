@@ -110,4 +110,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  acceleration: 1.2
+  acceleration: 2

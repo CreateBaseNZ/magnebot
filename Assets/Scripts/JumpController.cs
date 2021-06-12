@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JumpController : MonoBehaviour
 {
+    public bool invincible = false;
     public float gravityScale = 1f;
     public float jumpForce = 20f;
     private Rigidbody _rigidbody;
@@ -24,13 +25,29 @@ public class JumpController : MonoBehaviour
         {
             Jump();
         }
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
         }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            Crouch();
+        }
     }
 
-    void Jump()
+    public void Crouch()
+    {
+        if (_isJumping)
+        {
+            _rigidbody.AddForce(new Vector3(0, -jumpForce * 0.1f, 0), ForceMode.Impulse);
+        }
+        else
+        {
+            //Crouch
+        }
+    }
+
+    public void Jump()
     {
         if (!_isJumping)
         {
@@ -42,7 +59,7 @@ public class JumpController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         _isJumping = false;
-        if (collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("Obstacle") && !invincible)
         {
             GameController.Instance.GameLose();
         }

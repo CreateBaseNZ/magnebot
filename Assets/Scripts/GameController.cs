@@ -5,21 +5,9 @@ using System.Runtime.InteropServices;
 
 public class GameController : MonoBehaviour
 {
-    [DllImport("__Internal")]
-    private static extern void GetGameState(string gameState);
-
-    private static GameController _instance;
+    #region Singleton
     public static GameController Instance { get { return _instance; } }
-
-    public GameState gameState = GameState.PLAY;
-
-    public enum GameState
-    {
-        PLAY = 0,
-        WIN = 1,
-        LOSE = 2
-    }
-
+    private static GameController _instance;
     private void Awake()
     {
         if (_instance != null && _instance != this)
@@ -30,6 +18,19 @@ public class GameController : MonoBehaviour
         {
             _instance = this;
         }
+    }
+    #endregion
+
+    [DllImport("__Internal")]
+    private static extern void GetGameState(string gameState);
+
+    public GameState gameState = GameState.PLAY;
+
+    public enum GameState
+    {
+        PLAY = 0,
+        WIN = 1,
+        LOSE = 2
     }
 
     // Start is called before the first frame update

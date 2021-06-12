@@ -7,15 +7,9 @@ using System.Linq;
 
 public class SceneController : MonoBehaviour
 {
+    #region Singleton
     public static SceneController Instance { get { return _instance; } }
-    public string sceneName;
-    public List<Animator> transitions;
-    public float transitionTime = 1f;
-
     private static SceneController _instance;
-    private string _currentScene;
-    private List<string> scenesInBuild = new List<string>();
-
     private void Awake()
     {
         Application.targetFrameRate = 240;
@@ -29,6 +23,14 @@ public class SceneController : MonoBehaviour
             _instance = this;
         }
     }
+    #endregion
+
+    public string sceneName;
+    public List<Animator> transitions;
+    public float transitionTime = 1f;
+    
+    private string _currentScene;
+    private List<string> scenesInBuild = new List<string>();
 
     // Start is called before the first frame update
     void Start()
