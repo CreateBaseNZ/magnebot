@@ -55,7 +55,6 @@ public class ObjectPooler : MonoBehaviour
 
         poolDictionary[tag].Enqueue(objectToSpawn);
 
-        Debug.Log("Spawning from pool with tag " + tag);
         return objectToSpawn;
     }
 

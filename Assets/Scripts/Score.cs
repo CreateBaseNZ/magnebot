@@ -5,12 +5,15 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    TMP_Text score;
+    private TMP_Text _scoreText;
+    private int _score;
+    private int _highScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        score = GetComponent<TMP_Text>();
+        _scoreText = GetComponent<TMP_Text>();
+        _highScore = PlayerPrefs.GetInt("highScore");
     }
 
     // Update is called once per frame
@@ -18,7 +21,16 @@ public class Score : MonoBehaviour
     {
         if (GameController.Instance.gameState == GameController.GameState.PLAY)
         {
-            score.text = (Time.time * 10).ToString("00000");
+            _score = (int)(Time.time * 10);
+            _scoreText.text = "HI " + _highScore.ToString("00000") + " " + _score.ToString("00000");
+        }
+        else
+        {
+            if (_highScore < _score)
+            {
+                PlayerPrefs.SetInt("highScore", _score);
+            }
+            enabled = false;
         }
     }
 }

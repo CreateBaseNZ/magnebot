@@ -7,8 +7,6 @@ using System.Runtime.InteropServices;
 
 public class RoboticArm : MonoBehaviour
 {
-    
-
     [DllImport("__Internal")]
     private static extern void GetSensorData(string sensorData);
 

@@ -38,8 +38,8 @@ public class ObstacleSpawner : MonoBehaviour
         if (_time > _cooldown && GameController.Instance.gameState == GameController.GameState.PLAY)
         {
             var key = _poolKeys[Random.Range(0, _poolKeys.Count)];
-            var height = key == "Flying" ? Random.Range(1, 4) : 1;
-            _objPool.SpawnFromPool(key, speed, 0.8f * height);
+            var height = key == "Flying" ? Random.Range(1, 4) * 0.833f : 0.6f;
+            _objPool.SpawnFromPool(key, speed, height);
             _time = 0;
         }
     }
