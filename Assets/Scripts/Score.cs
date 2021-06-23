@@ -12,6 +12,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _score = 0;
         _scoreText = GetComponent<TMP_Text>();
         _highScore = PlayerPrefs.GetInt("highScore");
     }
@@ -21,7 +22,7 @@ public class Score : MonoBehaviour
     {
         if (GameController.Instance.gameState == GameController.GameState.PLAY)
         {
-            _score = (int)(Time.time * 10);
+            _score = (int)(Time.timeSinceLevelLoad * 10);
             _scoreText.text = "HI " + _highScore.ToString("00000") + " " + _score.ToString("00000");
         }
         else

@@ -6,24 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Project1/Default.unity
+    path: Assets/Scenes/Default.unity
     guid: ccb30b0ce31847d4d8188ca288dd270d
   - enabled: 0
-    path: Assets/Scenes/Project1/Project_Industrial_1.unity
+    path: Assets/Scenes/Arm Project/Project_Industrial_1.unity
     guid: f488dc7f96c5a9b4bb8b9f5905800717
   - enabled: 0
-    path: Assets/Scenes/Project1/Training_Base_0.unity
+    path: Assets/Scenes/Arm Project/Training_Base_0.unity
     guid: 96e95f85027b92741989c366e5443521
   - enabled: 0
-    path: Assets/Scenes/Project1/Training_Arm_0.unity
+    path: Assets/Scenes/Arm Project/Training_Arm_0.unity
     guid: 25e384a9af32a564086b034af1e349bc
   - enabled: 0
-    path: Assets/Scenes/Project1/Training_Arm_1.unity
+    path: Assets/Scenes/Arm Project/Training_Arm_1.unity
     guid: 9d4dc2f22ece96944ab1970d595eb43d
   - enabled: 0
-    path: Assets/Scenes/Project1/Sandbox_Industrial_1.unity
+    path: Assets/Scenes/Arm Project/Sandbox_Industrial_1.unity
     guid: a68b65d10fece2844b712c7ff67f0d1d
   - enabled: 1
-    path: Assets/Scenes/Project1/Project_Jump_0.unity
+    path: Assets/Scenes/Jump Project/Project_Jump_0.unity
+    guid: a7a861c77f45e6d44bafc8532dde63fe
+  - enabled: 1
+    path: Assets/Scenes/Jump Project/Project_Jump_1.unity
     guid: f2def093449ca2642a6ea3cd890a58d9
   m_configObjects: {}
