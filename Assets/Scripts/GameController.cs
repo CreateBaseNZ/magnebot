@@ -37,7 +37,7 @@ public class GameController : MonoBehaviour
     void Start()
     {
 #if !UNITY_EDITOR && UNITY_WEBGL
-        WebGLInput.captureAllKeyboardInput = false;
+        FocusCanvas(PlayerPrefs.GetString("p_focus"));
         GetGameState("Play");
 #endif
     }
@@ -80,11 +80,11 @@ public class GameController : MonoBehaviour
 #if !UNITY_EDITOR && UNITY_WEBGL
         if (p_focus == "0") {
             WebGLInput.captureAllKeyboardInput = false;
+            PlayerPrefs.SetString("p_focus", "0");
         } else {
             WebGLInput.captureAllKeyboardInput = true;
+            PlayerPrefs.SetString("p_focus", "1");
         }
 #endif
-
     }
-
 }
