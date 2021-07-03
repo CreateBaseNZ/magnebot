@@ -13,7 +13,7 @@ public class JumpController : MonoBehaviour
     private BoxCollider _collider;
     private bool _isJumping;
     private Animator _animator;
-    private AudioSource _deathSound;
+    private float _crouchTimer;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,6 @@ public class JumpController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
         _collider = GetComponent<BoxCollider>();
-        _deathSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -44,9 +43,8 @@ public class JumpController : MonoBehaviour
             Crouch();
             _collider.center = new Vector3(0, 1, 0);
             _collider.size = new Vector3(1, 1, 1);
-
         }
-        if (Input.GetKeyUp(KeyCode.DownArrow))
+        else if (_crouchTimer == 0)
         {
             _collider.center = new Vector3(0, 1.75f, 0);
             _collider.size = new Vector3(1.5f, 2.5f, 1);
@@ -54,6 +52,7 @@ public class JumpController : MonoBehaviour
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isDucking", false);
         }
+        _crouchTimer = Mathf.Clamp(_crouchTimer -= Time.deltaTime, 0, 1);
     }
 
     public void Crouch()
@@ -67,8 +66,8 @@ public class JumpController : MonoBehaviour
             _animator.SetBool("isWalking", false);
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isDucking", true);
+            _crouchTimer = 0.2f;
             //Crouch
-
         }
     }
 

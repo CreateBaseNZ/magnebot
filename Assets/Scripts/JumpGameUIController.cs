@@ -8,7 +8,6 @@ public class JumpGameUIController : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject pauseMain;
     public GameObject settings;
-    public Slider volumeSlider;
     public GameObject gameOverUI;
 
     // Start is called before the first frame update
@@ -16,9 +15,6 @@ public class JumpGameUIController : MonoBehaviour
     {
         ResumeButton();
         pauseMenu.SetActive(false);
-        SetGraphics(PlayerPrefs.GetString("quality"));
-        SetVolume(PlayerPrefs.GetFloat("volume"));
-        volumeSlider.value = PlayerPrefs.GetFloat("volume");
     }
 
     // Update is called once per frame
@@ -55,6 +51,7 @@ public class JumpGameUIController : MonoBehaviour
 
     public void ReturnToMainMenu()
     {
+        GameController.Instance.Resume();
         SceneController.Instance.LoadScene("Project_Jump_0");
     }
 
@@ -68,38 +65,6 @@ public class JumpGameUIController : MonoBehaviour
     {
         pauseMain.SetActive(true);
         settings.SetActive(false);
-    }
-
-    public void SetVolume(float volume)
-    {
-        AudioListener.volume = volume;
-    }
-
-    public void SetVolume(Slider slider)
-    {
-        AudioListener.volume = slider.normalizedValue;
-        PlayerPrefs.SetFloat("volume", slider.normalizedValue);
-    }
-
-    public void SetGraphics(string setting)
-    {
-        PlayerPrefs.SetString("quality", setting);
-        switch (setting)
-        {
-            case "Low":
-                QualitySettings.SetQualityLevel(0);
-                break;
-            case "Med":
-                QualitySettings.SetQualityLevel(1);
-                break;
-            case "High":
-                QualitySettings.SetQualityLevel(2);
-                break;
-            default:
-                QualitySettings.SetQualityLevel(2);
-                PlayerPrefs.SetString("quality", "High");
-                break;
-        }
     }
 
 }
