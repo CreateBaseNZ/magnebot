@@ -44,11 +44,11 @@ public class JumpController : MonoBehaviour
             _collider.center = new Vector3(0, 1, 0);
             _collider.size = new Vector3(1, 1, 1);
         }
-        else if (_crouchTimer == 0)
+        else if (_crouchTimer == 0 && !_isJumping)
         {
             _collider.center = new Vector3(0, 1.75f, 0);
             _collider.size = new Vector3(1.5f, 2.5f, 1);
-            _animator.SetBool("isWalking", true);
+            _animator.SetBool("isRunning", true);
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isDucking", false);
         }
@@ -63,7 +63,7 @@ public class JumpController : MonoBehaviour
         }
         else
         {
-            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isRunning", false);
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isDucking", true);
             _crouchTimer = 0.2f;
@@ -77,7 +77,7 @@ public class JumpController : MonoBehaviour
         {
             _isJumping = true;
             _rigidbody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-            _animator.SetBool("isWalking", false);
+            _animator.SetBool("isRunning", false);
             _animator.SetBool("isJumping", true);
             _animator.SetBool("isDucking", false);
 
@@ -87,7 +87,7 @@ public class JumpController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         _isJumping = false;
-        _animator.SetBool("isWalking", true);
+        _animator.SetBool("isRunning", true);
         _animator.SetBool("isJumping", false);
         _animator.SetBool("isDucking", false);
 

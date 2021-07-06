@@ -6,30 +6,41 @@ using System.Linq;
 
 public class ObjectSelection : MonoBehaviour
 {
+    public string playerPrefsKey;
     private List<GameObject> _objects;
 
     // Start is called before the first frame update
     void Start()
     {
-        _objects = GetComponentsInChildren<RectTransform>()
-            .Where(w => w.parent == gameObject.GetComponent<RectTransform>())
-            .Select(s => s.gameObject)
-            .ToList();
+        if (transform)
+        {
+            _objects = GetComponentsInChildren<Transform>(true)
+                .Where(w => w.parent == gameObject.GetComponent<Transform>())
+                .Select(s => s.gameObject)
+                .ToList();
+        }
+        else
+        {
+            _objects = GetComponentsInChildren<RectTransform>(true)
+                .Where(w => w.parent == gameObject.GetComponent<RectTransform>())
+                .Select(s => s.gameObject)
+                .ToList();
+        }
 
         _objects.ForEach(f => f.SetActive(false));
-        _objects[PlayerPrefs.GetInt("backgroundId")].SetActive(true);
+        _objects[PlayerPrefs.GetInt(playerPrefsKey)].SetActive(true);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void SelectObject(int id)
     {
         _objects.ForEach(f => f.SetActive(false));
         _objects[id].SetActive(true);
-        PlayerPrefs.SetInt("backgroundId", id);
+        PlayerPrefs.SetInt(playerPrefsKey, id);
     }
 }
