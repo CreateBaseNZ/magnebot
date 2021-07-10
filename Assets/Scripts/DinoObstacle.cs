@@ -5,7 +5,6 @@ using UnityEngine;
 public class DinoObstacle : MonoBehaviour
 {
     private float _speed = 3f;
-    private float _height = 0.6f;
 
     // Start is called before the first frame update
     void Start()
@@ -31,15 +30,5 @@ public class DinoObstacle : MonoBehaviour
     public float GetSpeed()
     {
         return _speed;
-    }
-
-    public void SetHeight(float height)
-    {
-        _height = height;
-    }
-
-    private void OnEnable()
-    {
-        gameObject.transform.position = new Vector3(15, _height, 0);
     }
 }

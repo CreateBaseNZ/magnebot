@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class SettingsMenu : MonoBehaviour
         SetGraphics(PlayerPrefs.GetString("quality"));
         SetVolume(PlayerPrefs.GetFloat("volume"));
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
+        
     }
 
     // Update is called once per frame

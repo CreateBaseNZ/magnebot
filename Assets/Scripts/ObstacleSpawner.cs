@@ -5,54 +5,54 @@ using System.Linq;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public bool varySize;
-    public bool varyHeight;
-    public bool varyBreakable;
-    public float speed = 3f;
+    public float speed = 15f;
     public float acceleration = 5f;
 
-    private ObjectPooler _objPool;
-    private List<string> _poolKeys;
     private float _time;
     private float _cooldown;
+    private List<string> _keys = new List<string>() {"Small"};
 
     // Start is called before the first frame update
     void Start()
     {
-        _objPool = GetComponent<ObjectPooler>();
-        _poolKeys = new List<string>(new string[] { "Small" });
         _time = 0;
-        _cooldown = 3;
+        _cooldown = 2;
+        if (PlayerPrefs.GetInt("Acceleration") == 0){
+            acceleration = 0;
+        }
+        if (PlayerPrefs.GetInt("Flying", 0) == 1)
+        {
+            _keys.Add("Flying");
+        }
+        if(PlayerPrefs.GetInt("Large", 0) == 1)
+        {
+            _keys.Add("Large");
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        KeyCheck(varySize, "Large");
-        KeyCheck(varyHeight, "Flying");
-        KeyCheck(varyBreakable, "Breakable");
-
         _time += Time.deltaTime;
         speed += acceleration * Time.deltaTime;
 
         if (_time > _cooldown && GameController.Instance.gameState == GameController.GameState.PLAY)
         {
-            var key = _poolKeys[Random.Range(0, _poolKeys.Count)];
-            var height = key == "Flying" ? Random.Range(1, 4) * 0.833f : 0.6f;
-            _objPool.SpawnFromPool(key, speed, height);
+            var key = _keys[Random.Range(0, _keys.Count)];
+            Vector3 pos = new Vector3(15, 0, 0);
+            GameObject spawnedObj = null;
+            if (key == "Flying")
+            {
+                pos = new Vector3(15, Random.Range(1, 4) * 0.9f, 0);
+                spawnedObj = Pool.Instance.Activate(key, pos, true);
+            }
+            else
+            {
+                spawnedObj = Pool.Instance.Activate(key, pos);
+            }
+            spawnedObj.GetComponent<DinoObstacle>().SetSpeed(speed);
+            _cooldown = Random.Range(0.8f, 2f);
             _time = 0;
-        }
-    }
-
-    private void KeyCheck(bool keyBoolean, string keyString)
-    {
-        if (keyBoolean && !_poolKeys.Contains(keyString))
-        {
-            _poolKeys.Add(keyString);
-        }
-        else if (!keyBoolean && _poolKeys.Contains(keyString))
-        {
-            _poolKeys.Remove(keyString);
         }
     }
 }

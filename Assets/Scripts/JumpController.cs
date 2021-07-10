@@ -14,6 +14,7 @@ public class JumpController : MonoBehaviour
     private bool _isJumping;
     private Animator _animator;
     private float _crouchTimer;
+    private Bounds _standingBounds;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,8 @@ public class JumpController : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _animator = GetComponentInChildren<Animator>();
         _collider = GetComponent<BoxCollider>();
+        _standingBounds = _collider.bounds;
+        _standingBounds.center -= transform.position;
     }
 
     // Update is called once per frame
@@ -46,8 +49,8 @@ public class JumpController : MonoBehaviour
         }
         else if (_crouchTimer == 0 && !_isJumping)
         {
-            _collider.center = new Vector3(0, 1.75f, 0);
-            _collider.size = new Vector3(1.5f, 2.5f, 1);
+            _collider.center = _standingBounds.center;
+            _collider.size = _standingBounds.size;
             _animator.SetBool("isRunning", true);
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isDucking", false);

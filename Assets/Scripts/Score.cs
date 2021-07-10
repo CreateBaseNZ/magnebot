@@ -8,6 +8,7 @@ public class Score : MonoBehaviour
     private TMP_Text _scoreText;
     private int _score;
     private int _highScore;
+    private float _scoreMultiplier;
 
     // Start is called before the first frame update
     void Start()
@@ -15,6 +16,8 @@ public class Score : MonoBehaviour
         _score = 0;
         _scoreText = GetComponent<TMP_Text>();
         _highScore = PlayerPrefs.GetInt("highScore");
+        _scoreMultiplier = PlayerPrefs.GetFloat("scoreMultiplier");
+
     }
 
     // Update is called once per frame
@@ -22,7 +25,7 @@ public class Score : MonoBehaviour
     {
         if (GameController.Instance.gameState == GameController.GameState.PLAY)
         {
-            _score = (int)(Time.timeSinceLevelLoad * 10);
+            _score = (int)(Time.timeSinceLevelLoad * _scoreMultiplier);
             _scoreText.text = "HI " + _highScore.ToString("00000") + " " + _score.ToString("00000");
         }
         else
