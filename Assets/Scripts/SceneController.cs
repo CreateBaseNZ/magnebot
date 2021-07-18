@@ -28,7 +28,7 @@ public class SceneController : MonoBehaviour
     public string sceneName;
     public List<Animator> transitions;
     public float transitionTime = 1f;
-    
+
     private string _currentScene;
     private List<string> scenesInBuild = new List<string>();
 
@@ -60,12 +60,22 @@ public class SceneController : MonoBehaviour
         StartCoroutine(LoadLevel(sceneName));
     }
 
-    private IEnumerator LoadLevel(string sceneName)
+    public void LoadScene(int index)
     {
-        transitions.ForEach(f => f.SetTrigger("Start"));
+        StartCoroutine(LoadLevel(scenesInBuild[index]));
+    }
+
+    private IEnumerator LoadLevel(string sceneString)
+    {
+        //transitions.ForEach(f => f.SetTrigger("Start"));
+        var parseScene = sceneName.Split(',');
+        sceneName = parseScene[0];
+        if (parseScene.Length == 2)
+        {
+            PlayerPrefs.SetString("CreationStage", parseScene[1].ToLower());
+        }
 
         yield return new WaitForSeconds(transitionTime);
-
 
         if (scenesInBuild.Contains(sceneName.ToLower()))
         {
@@ -81,5 +91,7 @@ public class SceneController : MonoBehaviour
             _currentScene = sceneName;
         }
     }
+
+
 
 }

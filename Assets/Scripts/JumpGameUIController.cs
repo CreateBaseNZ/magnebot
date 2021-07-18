@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class JumpGameUIController : MonoBehaviour
 {
@@ -30,6 +31,14 @@ public class JumpGameUIController : MonoBehaviour
     {
         gameOverUI.SetActive(true);
         gameObject.SetActive(false);
+        if (GameController.Instance.gameState == GameController.GameState.WIN)
+        {
+            gameOverUI.GetComponentInChildren<TMP_Text>().text = "Complete!";
+        }
+        else if (GameController.Instance.gameState == GameController.GameState.LOSE)
+        {
+            gameOverUI.GetComponentInChildren<TMP_Text>().text = "Game Over";
+        }
     }
 
     public void RestartButton()

@@ -10,7 +10,7 @@ public class ObjectSelection : MonoBehaviour
     private List<GameObject> _objects;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (transform)
         {

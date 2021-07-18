@@ -177,7 +177,6 @@ GameObject:
   - component: {fileID: 2748829540521939657}
   - component: {fileID: 7356923201857210367}
   - component: {fileID: 2645411017637869042}
-  - component: {fileID: 246490369313927628}
   m_Layer: 0
   m_Name: Vehicle 1.002
   m_TagString: Obstacle
@@ -193,7 +192,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3683710122243891309}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_Children: []
   m_Father: {fileID: 7021820007826720134}
@@ -251,19 +250,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &246490369313927628
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3683710122243891309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.024065284, y: 0.016039109, z: 0.019581836}
-  m_Center: {x: 0, y: 0, z: 0.00014578129}
 --- !u!1 &3997496590765555456
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +343,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7021820007826720134}
   - component: {fileID: 867753903605714949}
+  - component: {fileID: 8571678678518266378}
   m_Layer: 0
   m_Name: Vehicle1_Prefab
   m_TagString: Obstacle
@@ -395,6 +382,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3891c7ec20c0bc64f98fa85d8f9ea23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8571678678518266378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654242176205741884}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.34, y: 2.03, z: 1.958184}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8044437566955040409
 GameObject:
   m_ObjectHideFlags: 0

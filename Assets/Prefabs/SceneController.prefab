@@ -48,7 +48,7 @@ MonoBehaviour:
   transitions:
   - {fileID: 1975164188196417496}
   - {fileID: 4835532540651003069}
-  transitionTime: 1.65
+  transitionTime: 0
 --- !u!1 &518262552807381647
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4073043135754808444
 RectTransform:
   m_ObjectHideFlags: 0
@@ -388,7 +388,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &211400217192396850
 MonoBehaviour:

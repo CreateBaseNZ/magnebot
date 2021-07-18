@@ -24,19 +24,12 @@ public class JumpController : MonoBehaviour
         _collider = GetComponent<BoxCollider>();
         _standingBounds = _collider.bounds;
         _standingBounds.center -= transform.position;
+        _isJumping = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        RaycastHit hit;
-        Physics.Raycast(gameObject.transform.position + new Vector3(0.51f, 0, 0), Vector3.right, out hit);
-        if (hit.distance < 0.5 && hit.distance != 0)
-        {
-            Jump();
-        }
-        */
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
@@ -44,8 +37,6 @@ public class JumpController : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             Crouch();
-            _collider.center = new Vector3(0, 1, 0);
-            _collider.size = new Vector3(1, 1, 1);
         }
         else if (_crouchTimer == 0 && !_isJumping)
         {
@@ -69,7 +60,9 @@ public class JumpController : MonoBehaviour
             _animator.SetBool("isRunning", false);
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isDucking", true);
-            _crouchTimer = 0.2f;
+            _collider.center = new Vector3(0, 1, 0);
+            _collider.size = new Vector3(1, 1, 1);
+            _crouchTimer = 1f;
             //Crouch
         }
     }
@@ -83,7 +76,7 @@ public class JumpController : MonoBehaviour
             _animator.SetBool("isRunning", false);
             _animator.SetBool("isJumping", true);
             _animator.SetBool("isDucking", false);
-
+            _crouchTimer = 0;
         }
     }
 

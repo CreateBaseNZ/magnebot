@@ -17,16 +17,33 @@ public class ObstacleSpawner : MonoBehaviour
     {
         _time = 0;
         _cooldown = 2;
-        if (PlayerPrefs.GetInt("Acceleration") == 0){
-            acceleration = 0;
-        }
-        if (PlayerPrefs.GetInt("Flying", 0) == 1)
+
+        switch (PlayerPrefs.GetString("CreationStage"))
         {
-            _keys.Add("Flying");
-        }
-        if(PlayerPrefs.GetInt("Large", 0) == 1)
-        {
-            _keys.Add("Large");
+            case "research":
+                acceleration = 0.4f;
+                _keys.Add("Flying");
+                _keys.Add("Large");
+                break;
+            case "create":
+                acceleration = 0;
+                break;
+            case "improve":
+                if (PlayerPrefs.GetInt("Acceleration") == 0)
+                {
+                    acceleration = 0;
+                }
+                if (PlayerPrefs.GetInt("Flying", 0) == 1)
+                {
+                    _keys.Add("Flying");
+                }
+                if (PlayerPrefs.GetInt("Large", 0) == 1)
+                {
+                    _keys.Add("Large");
+                }
+                break;
+            default:
+                break;
         }
     }
 
@@ -51,7 +68,7 @@ public class ObstacleSpawner : MonoBehaviour
                 spawnedObj = Pool.Instance.Activate(key, pos);
             }
             spawnedObj.GetComponent<DinoObstacle>().SetSpeed(speed);
-            _cooldown = Random.Range(0.8f, 2f);
+            _cooldown = Random.Range(0.5f, 1.5f);
             _time = 0;
         }
     }

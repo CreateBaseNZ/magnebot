@@ -95,7 +95,6 @@ GameObject:
   - component: {fileID: 4588704259923997209}
   - component: {fileID: 4239234613699756324}
   - component: {fileID: 6876593198747798167}
-  - component: {fileID: 9112723193252722471}
   m_Layer: 0
   m_Name: Vehicle 3
   m_TagString: Obstacle
@@ -169,19 +168,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9112723193252722471
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3157488760909931770}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.04214335, y: 0.022815742, z: 0.019981451}
-  m_Center: {x: -0.00028352998, y: 0.0000000013969836, z: 0.001653921}
 --- !u!1 &5204952080154840112
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,6 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6907731153079784049}
   - component: {fileID: 5236079464161625738}
+  - component: {fileID: 3497761311370209983}
   m_Layer: 0
   m_Name: Vehicle3_Prefab
   m_TagString: Obstacle
@@ -314,6 +301,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3891c7ec20c0bc64f98fa85d8f9ea23a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3497761311370209983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6095305771665852619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.214335, y: 2.281574, z: 2.36}
+  m_Center: {x: 0, y: 0.53, z: 0}
 --- !u!1 &7629574221278421323
 GameObject:
   m_ObjectHideFlags: 0
