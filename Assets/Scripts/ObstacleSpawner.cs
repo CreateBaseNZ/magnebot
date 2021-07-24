@@ -68,7 +68,7 @@ public class ObstacleSpawner : MonoBehaviour
                 spawnedObj = Pool.Instance.Activate(key, pos);
             }
             spawnedObj.GetComponent<DinoObstacle>().SetSpeed(speed);
-            _cooldown = Random.Range(0.5f, 1.5f);
+            _cooldown = Random.Range(0.75f, 1.5f);
             _time = 0;
         }
     }

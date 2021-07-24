@@ -5,37 +5,31 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    private TMP_Text _scoreText;
-    private int _score;
-    private int _highScore;
-    private float _scoreMultiplier;
-    // Start is called before the first frame update
-    void Start()
+    TMP_Text score;
+
+    private void Start()
     {
-        _score = 0;
-        _scoreText = GetComponent<TMP_Text>();
-        _highScore = PlayerPrefs.GetInt("highScore");
-        _scoreMultiplier = PlayerPrefs.GetFloat("scoreMultiplier");
+        score = GetComponent<TMP_Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (GameController.Instance.gameState == GameController.GameState.PLAY)
+        if (GameController.Instance.gameState != GameController.GameState.PLAY)
         {
-            int distRemain = Mathf.Clamp((int)(1000 - Time.timeSinceLevelLoad * 20), 0, 1000);
-            _scoreText.text = "Distance remaining: " + distRemain + "m";
-            if (distRemain == 0)
+            var playerScore = 0;
+            if (PlayerPrefs.GetString("CreationStage") == "research")
             {
-                GameController.Instance.GameWin();
+                playerScore = (int)(Time.timeSinceLevelLoad * 2.55f);
             }
-        }
-        else
-        {
-            if (_highScore < _score)
+            else if (PlayerPrefs.GetString("CreationStage") == "create")
             {
-                PlayerPrefs.SetInt("highScore", _score);
+                playerScore = (int)Time.timeSinceLevelLoad;
             }
+            else if(PlayerPrefs.GetString("CreationStage") == "improve")
+            {
+                playerScore = (int)(Time.timeSinceLevelLoad * PlayerPrefs.GetFloat("scoreMultiplier"));
+            }
+            score.text = playerScore.ToString();
             enabled = false;
         }
     }

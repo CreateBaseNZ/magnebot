@@ -22,7 +22,7 @@ public class ConditionalButton : MonoBehaviour
         else
         {
             GetComponent<Button>().interactable = false;
-            tmp_text.text = "Requires Improve\nstage";
+            tmp_text.text = "Modifiers  available\nin  Improve  stage";
             tmp_text.fontSize = 16;
             tmp_text.color = new Color(0.5f, 0, 0); ;
             tmp_text.fontStyle = FontStyles.Normal;

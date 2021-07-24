@@ -35,7 +35,9 @@ public class SceneController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currentScene = SceneManager.GetActiveScene().name;
+        
+
+       _currentScene = SceneManager.GetActiveScene().name;
         for (int i = 0; i < SceneManager.sceneCountInBuildSettings; i++)
         {
             string scenePath = SceneUtility.GetScenePathByBuildIndex(i);
@@ -68,8 +70,8 @@ public class SceneController : MonoBehaviour
     private IEnumerator LoadLevel(string sceneString)
     {
         //transitions.ForEach(f => f.SetTrigger("Start"));
-        var parseScene = sceneName.Split(',');
-        sceneName = parseScene[0];
+        var parseScene = sceneString.Split(',');
+        var sceneName = parseScene[0];
         if (parseScene.Length == 2)
         {
             PlayerPrefs.SetString("CreationStage", parseScene[1].ToLower());

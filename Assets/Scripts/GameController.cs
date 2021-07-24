@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.InteropServices;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -47,9 +48,15 @@ public class GameController : MonoBehaviour
         Time.timeScale = 0;
     }
 
+    public void SetTimeScale(Slider slider)
+    {
+        PlayerPrefs.SetFloat("timeScale", slider.value);
+        Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
+    }
+
     public void Resume()
     {
-        Time.timeScale = 1;
+        Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
     }
 
     public void GameWin()

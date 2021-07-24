@@ -10,12 +10,17 @@ public class JumpGameUIController : MonoBehaviour
     public GameObject pauseMain;
     public GameObject settings;
     public GameObject gameOverUI;
+    public GameObject simulationSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
         ResumeButton();
         pauseMenu.SetActive(false);
+        if(PlayerPrefs.GetString("CreationStage") == "research")
+        {
+            simulationSpeed.SetActive(false);
+        }
     }
 
     // Update is called once per frame

@@ -21,10 +21,10 @@ public class PlayerSensor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        m_HitDetect = Physics.BoxCast(transform.position + new Vector3(0, 1.5f, 0), new Vector3(1f, 4f, 4f), Vector3.right, out m_Hit);
+        m_HitDetect = Physics.BoxCast(new Vector3(0, 1.5f, 0), new Vector3(0.1f, 4f, 4f), Vector3.right, out m_Hit);
         if (m_HitDetect && m_Hit.collider.GetComponent<DinoObstacle>())
         {
-            _sensorData.obstacleDistance = new Vector2(m_Hit.distance, m_Hit.point.y);
+            _sensorData.obstacleDistance = new Vector2(m_Hit.transform.position.x - transform.position.x, m_Hit.point.y);
             _sensorData.obstacleSpeed = m_Hit.collider.GetComponent<DinoObstacle>().GetSpeed();
             _sensorData.obstacleSize = new Vector2(m_Hit.collider.bounds.extents.x, m_Hit.collider.bounds.extents.y);
         }
