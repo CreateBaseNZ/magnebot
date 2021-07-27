@@ -155,7 +155,7 @@ RectTransform:
   - {fileID: 1821556266}
   - {fileID: 297802967}
   m_Father: {fileID: 762020578}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -869,12 +869,12 @@ RectTransform:
   - {fileID: 608835789}
   - {fileID: 285286470}
   m_Father: {fileID: 762020578}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300, y: -50}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 400, y: -50}
+  m_SizeDelta: {x: 120, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &384298256
 MonoBehaviour:
@@ -923,7 +923,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.66
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -2024,11 +2024,11 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 384298255}
   - {fileID: 1439555004}
   - {fileID: 1203295424}
   - {fileID: 37365602}
   - {fileID: 1645078077}
-  - {fileID: 384298255}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2764,7 +2764,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 762020578}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -3417,7 +3417,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 762020578}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -4054,7 +4054,7 @@ RectTransform:
   m_Children:
   - {fileID: 1727613847}
   m_Father: {fileID: 762020578}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5376,8 +5376,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6352238dbe8d7444cb5ef0199466bd31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  acceleration: 0.4
+  speed: 8
+  acceleration: 0.6
 --- !u!114 &2096661984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5629,6 +5629,10 @@ PrefabInstance:
     - target: {fileID: 6760547919460931995, guid: 5790799f9ed2a5849a847a754acd9c6b, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6760547919460931997, guid: 5790799f9ed2a5849a847a754acd9c6b, type: 3}
+      propertyPath: invincible
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6760547919460931997, guid: 5790799f9ed2a5849a847a754acd9c6b, type: 3}
       propertyPath: enableKeyboardControls

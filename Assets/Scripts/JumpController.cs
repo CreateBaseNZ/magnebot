@@ -53,7 +53,7 @@ public class JumpController : MonoBehaviour
             _animator.SetBool("isJumping", false);
             _animator.SetBool("isDucking", false);
         }
-        _crouchTimer = Mathf.Clamp(_crouchTimer -= Time.deltaTime, 0, 1);
+        _crouchTimer = Mathf.Clamp(_crouchTimer -= Time.deltaTime, 0, 0.6f);
         _jumpTimer = Mathf.Clamp(_jumpTimer -= Time.deltaTime, 0, 0.5f);
     }
 
@@ -70,7 +70,7 @@ public class JumpController : MonoBehaviour
             _animator.SetBool("isDucking", true);
             _collider.center = new Vector3(0, 1, 0);
             _collider.size = new Vector3(1, 1, 1);
-            _crouchTimer = 1f;
+            _crouchTimer = 0.6f;
             //Crouch
         }
     }

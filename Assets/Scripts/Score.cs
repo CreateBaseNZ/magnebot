@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
             }
             else if(PlayerPrefs.GetString("CreationStage") == "improve")
             {
-                playerScore = (int)(Time.timeSinceLevelLoad * PlayerPrefs.GetFloat("scoreMultiplier"));
+                playerScore = (int)(Time.time * PlayerPrefs.GetFloat("scoreMultiplier"));
             }
             score.text = playerScore.ToString();
             enabled = false;

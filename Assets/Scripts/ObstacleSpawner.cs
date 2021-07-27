@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Linq;
 
 public class ObstacleSpawner : MonoBehaviour
 {
@@ -15,13 +14,14 @@ public class ObstacleSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Random.InitState(69);
+
         _time = 0;
         _cooldown = 2;
 
         switch (PlayerPrefs.GetString("CreationStage"))
         {
             case "research":
-                acceleration = 0.4f;
                 _keys.Add("Flying");
                 _keys.Add("Large");
                 break;
