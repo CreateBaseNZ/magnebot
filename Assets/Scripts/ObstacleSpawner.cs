@@ -19,7 +19,7 @@ public class ObstacleSpawner : MonoBehaviour
         _time = 0;
         _cooldown = 2;
 
-        switch (PlayerPrefs.GetString("CreationStage"))
+        switch (PlayerPrefs.GetString("creationStage"))
         {
             case "research":
                 _keys.Add("Flying");

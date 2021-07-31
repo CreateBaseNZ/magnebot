@@ -28,7 +28,7 @@ public class JumpController : MonoBehaviour
         _standingBounds = _collider.bounds;
         _standingBounds.center -= transform.position;
         _isJumping = true;
-        _onResearchStage = PlayerPrefs.GetString("CreationStage") == "research";
+        _onResearchStage = PlayerPrefs.GetString("creationStage") == "research";
     }
 
     // Update is called once per frame

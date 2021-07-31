@@ -37,6 +37,15 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(PlayerPrefs.GetString("creationStage") == "research")
+        {
+            PlayerPrefs.SetFloat("timeScale", 1);
+        }
+        else
+        {
+            PlayerPrefs.SetFloat("timeScale", 0.66f);
+        }
+        Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
 #if !UNITY_EDITOR && UNITY_WEBGL
         FocusCanvas(PlayerPrefs.GetString("p_focus"));
         GetGameState("Play");

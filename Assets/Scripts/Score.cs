@@ -17,17 +17,17 @@ public class Score : MonoBehaviour
         if (GameController.Instance.gameState != GameController.GameState.PLAY)
         {
             var playerScore = 0;
-            if (PlayerPrefs.GetString("CreationStage") == "research")
+            if (PlayerPrefs.GetString("creationStage") == "research")
             {
                 playerScore = (int)(Time.timeSinceLevelLoad * 2.55f);
             }
-            else if (PlayerPrefs.GetString("CreationStage") == "create")
+            else if (PlayerPrefs.GetString("creationStage") == "create")
             {
                 playerScore = (int)Time.timeSinceLevelLoad;
             }
-            else if(PlayerPrefs.GetString("CreationStage") == "improve")
+            else if(PlayerPrefs.GetString("creationStage") == "improve")
             {
-                playerScore = (int)(Time.time * PlayerPrefs.GetFloat("scoreMultiplier"));
+                playerScore = (int)(Time.timeSinceLevelLoad * PlayerPrefs.GetFloat("scoreMultiplier"));
             }
             score.text = playerScore.ToString();
             enabled = false;

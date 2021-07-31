@@ -9,7 +9,7 @@ public class ConditionalButton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bool onImproveStage = PlayerPrefs.GetString("CreationStage") == "improve";
+        bool onImproveStage = PlayerPrefs.GetString("creationStage") == "improve";
         var tmp_text = GetComponentInChildren<TMP_Text>();
         if (onImproveStage)
         {

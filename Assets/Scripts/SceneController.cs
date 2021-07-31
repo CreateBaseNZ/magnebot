@@ -74,7 +74,7 @@ public class SceneController : MonoBehaviour
         var sceneName = parseScene[0];
         if (parseScene.Length == 2)
         {
-            PlayerPrefs.SetString("CreationStage", parseScene[1].ToLower());
+            PlayerPrefs.SetString("creationStage", parseScene[1].ToLower());
         }
 
         yield return new WaitForSeconds(transitionTime);

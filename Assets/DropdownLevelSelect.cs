@@ -11,23 +11,23 @@ public class DropdownLevelSelect : MonoBehaviour
     private void Awake()
     {
         dropdown = GetComponent<TMP_Dropdown>();
-        dropdown.SetValueWithoutNotify(SceneManager.GetActiveScene().buildIndex);
+        dropdown.SetValueWithoutNotify(SceneManager.GetActiveScene().buildIndex-1);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void LoadSceneDropdown(TMP_Dropdown dropdown)
     {
-        SceneController.Instance.LoadScene(dropdown.value);
+        SceneController.Instance.LoadScene(dropdown.value + 1);
     }
 }

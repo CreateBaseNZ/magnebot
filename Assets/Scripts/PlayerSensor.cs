@@ -21,10 +21,13 @@ public class PlayerSensor : MonoBehaviour
     void Update()
     {
         _boxHit = Physics.BoxCastAll(new Vector3(transform.position.x, 1.5f, 0), new Vector3(0.05f, 4f, 4f), Vector3.right);
-        var hit = _boxHit.Where(w => w.collider.GetComponent<DinoObstacle>()).ToList();
+        var hit = _boxHit
+            .Where(w => w.collider.GetComponent<DinoObstacle>() && (w.collider.transform.position.x - transform.position.x > 0))
+            .OrderBy(o => o.collider.transform.position.x - transform.position.x)
+            .ToList();
         if (hit.Count > 0)
         {
-            _sensorData.obstacleDistance = new Vector2(hit[0].transform.position.x - transform.position.x, hit[0].point.y);
+            _sensorData.obstacleDistance = new Vector2(hit[0].transform.position.x - transform.position.x, hit[0].transform.position.y);
             _sensorData.obstacleSpeed = hit[0].collider.GetComponent<DinoObstacle>().GetSpeed();
             _sensorData.obstacleSize = new Vector2(hit[0].collider.bounds.extents.x, hit[0].collider.bounds.extents.y);
         }
