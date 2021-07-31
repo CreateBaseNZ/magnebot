@@ -14,7 +14,6 @@ public class SettingsMenu : MonoBehaviour
         SetGraphics(PlayerPrefs.GetString("quality"));
         SetVolume(PlayerPrefs.GetFloat("volume"));
         volumeSlider.value = PlayerPrefs.GetFloat("volume");
-        
     }
 
     // Update is called once per frame

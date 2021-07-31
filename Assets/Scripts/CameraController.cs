@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class CameraController : MonoBehaviour
 {
@@ -29,7 +30,7 @@ public class CameraController : MonoBehaviour
         _currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
         _currentZoom = Mathf.Clamp(_currentZoom, minZoom, maxZoom);
 
-        if (Input.GetMouseButton(0) || Input.GetMouseButton(1) || Input.GetMouseButton(2))
+        if (Input.GetMouseButton(1) || Input.GetMouseButton(2))
         {
             _currentYaw += Input.GetAxis("Mouse X") * yawSpeed * Time.deltaTime;
             _currentPitch += Input.GetAxis("Mouse Y") * pitchSpeed * Time.deltaTime;

@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetFloat("timeScale", 0.66f);
+            PlayerPrefs.SetFloat("timeScale", 1f);
         }
         Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
 #if !UNITY_EDITOR && UNITY_WEBGL

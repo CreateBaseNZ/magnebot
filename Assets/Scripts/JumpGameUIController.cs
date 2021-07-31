@@ -17,7 +17,7 @@ public class JumpGameUIController : MonoBehaviour
     {
         ResumeButton();
         pauseMenu.SetActive(false);
-        simulationSpeed.GetComponent<Slider>().value = 0.66f;
+        simulationSpeed.GetComponent<Slider>().value = 1f;
         if(PlayerPrefs.GetString("creationStage") == "research")
         {
             simulationSpeed.SetActive(false);

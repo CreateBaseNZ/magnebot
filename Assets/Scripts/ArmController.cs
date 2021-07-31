@@ -10,6 +10,7 @@ public class ArmController : MonoBehaviour
     public Vector3 ikTarget;
     [Range(-180, 180)] public List<float> targets;
     public float gain = 1f;
+    public GameObject targetVisual;
 
     private float L, M, N, h;
 
@@ -24,6 +25,7 @@ public class ArmController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        targetVisual.transform.position = ikTarget + new Vector3(0,-0.75f,0);
         InverseKinematics();
 
         for (int i = 0; i < hingeJoints.Count; i++)
@@ -62,10 +64,8 @@ public class ArmController : MonoBehaviour
                     vel *= 0.5f;
                 }
                 newMotor.targetVelocity = Mathf.Clamp(vel, -100, 100);
-
-
                 newMotor.force = Mathf.Infinity;
-
+                newMotor.freeSpin = false;
                 hingeJoints[i].motor = newMotor;
                 hingeJoints[i].useMotor = true;
             }
@@ -87,10 +87,19 @@ public class ArmController : MonoBehaviour
         var c = -b - a + 2 * Mathf.PI;
         var d = Mathf.Atan2(t.x, t.z);
 
-        targets[0] = -Mathf.Rad2Deg * d - 180;
-        targets[1] = -(Mathf.Rad2Deg * a - 90);
-        targets[2] = -(Mathf.Rad2Deg * b - 180);
-        targets[3] = -(Mathf.Rad2Deg * c - 180);
+        float[] tempTargets = new float[4];
+        tempTargets[0] = -Mathf.Rad2Deg * d - 180;
+        tempTargets[1] = -(Mathf.Rad2Deg * a - 90);
+        tempTargets[2] = -(Mathf.Rad2Deg * b - 180);
+        tempTargets[3] = -(Mathf.Rad2Deg * c - 180);
+
+        if (!tempTargets.Any(a => float.IsNaN(a)))
+        {
+            targets[0] = tempTargets[0];
+            targets[1] = tempTargets[1];
+            targets[2] = tempTargets[2];
+            targets[3] = tempTargets[3];
+        }
     }
 
     private void OnEnable()

@@ -32,7 +32,13 @@ public class ObjectiveProgress : MonoBehaviour
         _text.text = currentProgress + "/" + requiredProgress + " " + _description;
         if(currentProgress == requiredProgress)
         {
-            GetComponentsInChildren<TMP_Text>().ToList().ForEach(f => f.color = Color.grey);
+            CompleteText();
         }
+    }
+
+    public void CompleteText()
+    {
+        _text.text = "</s>" + _text.text + "</s>";
+        GetComponentsInChildren<TMP_Text>().ToList().ForEach(f => f.color = Color.grey);
     }
 }
