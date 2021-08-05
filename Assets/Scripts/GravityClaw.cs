@@ -2,15 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class GravityClaw : MonoBehaviour
 {
     public bool dropObject = false;
     public Material shader;
+    public List<ObjectiveProgress> objectiveProgress;
+    public GameObject targetVisual;
+    private Collider _collider;
+    private Material _targetMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
+        _targetMaterial = targetVisual.GetComponent<Renderer>().material;
+        _collider = GetComponent<SphereCollider>();
         if (dropObject)
         {
             DisableGravitySphere();
@@ -24,6 +31,8 @@ public class GravityClaw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        _targetMaterial.color = Vector3.Distance(targetVisual.transform.position, transform.position) < 0.25f ? Color.green : Color.red;
+
         if (dropObject)
         {
             var list = GetComponentsInChildren<Transform>().ToList();
@@ -37,20 +46,18 @@ public class GravityClaw : MonoBehaviour
             {
                 list[1].transform.parent = null;
             }
-            GetComponent<SphereCollider>().enabled = false;
-        }
-        else
-        {
-            GetComponent<SphereCollider>().enabled = true;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (isActiveAndEnabled)
+        
+        if (other.tag.ToLower().Contains("objective"))
         {
-            if (other.tag.ToLower().Contains("objective"))
+            objectiveProgress[0].CompleteObjective();
+            if (isActiveAndEnabled && !dropObject)
             {
+                objectiveProgress[1].CompleteObjective();
                 other.transform.parent = gameObject.transform;
                 other.transform.localPosition = Vector3.zero;
                 var rb = other.gameObject.GetComponent<Rigidbody>();
@@ -81,5 +88,17 @@ public class GravityClaw : MonoBehaviour
         shader.SetFloat("Line_Transparency", 1);
         shader.SetColor("Glow_Colour", new Color(3f / 255f, 191f / 255f, 0) * 8);
         shader.SetFloat("Line_Thickness", 0.12f);
+    }
+
+    public void EnableGravitySphere(Toggle toggle)
+    {
+        if (toggle.isOn)
+        {
+            EnableGravitySphere();
+        }
+        else
+        {
+            DisableGravitySphere();
+        }
     }
 }

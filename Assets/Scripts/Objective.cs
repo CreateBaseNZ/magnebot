@@ -55,7 +55,7 @@ public class Objective : MonoBehaviour
         if (other.CompareTag(tag) && other.GetComponent<Objective>() == null)
         {
             _currentStayTime += Time.deltaTime;
-            if(_currentStayTime >= stayTime)
+            if(_currentStayTime >= stayTime && GameController.Instance.gameState != GameController.GameState.LOSE)
             {
                 if (collectEffect != null)
                 {

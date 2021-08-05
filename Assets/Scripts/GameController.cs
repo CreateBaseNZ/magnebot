@@ -87,6 +87,7 @@ public class GameController : MonoBehaviour
 #if !UNITY_EDITOR && UNITY_WEBGL
             GetGameState("Lose");
 #endif
+
         }
     }
 

@@ -36,14 +36,13 @@ public class JumpGameUIController : MonoBehaviour
     public void GameOver()
     {
         gameOverUI.SetActive(true);
-        gameObject.SetActive(false);
         if (GameController.Instance.gameState == GameController.GameState.WIN)
         {
-            gameOverUI.GetComponentInChildren<TMP_Text>().text = "Complete!";
+            gameOverUI.GetComponentInChildren<TMP_Text>().text = "Noice!";
         }
         else if (GameController.Instance.gameState == GameController.GameState.LOSE)
         {
-            gameOverUI.GetComponentInChildren<TMP_Text>().text = "Game Over";
+            gameOverUI.GetComponentInChildren<TMP_Text>().text = "You broke the arm!\nTry again!";
         }
     }
 
