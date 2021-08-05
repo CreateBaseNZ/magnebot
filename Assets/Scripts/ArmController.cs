@@ -14,7 +14,6 @@ public class ArmController : MonoBehaviour
     public GameObject targetVisual;
 
     private float L, M, N, h;
-    private float[] absError = new float[4];
 
     // Start is called before the first frame update
     void Start()
@@ -38,18 +37,18 @@ public class ArmController : MonoBehaviour
                 var refAngles = targets.Select(a => ((a + 180) % 360) - 180).ToArray();
 
                 var error = refAngles[i] - hingeJoints[i].angle;
-                absError[i] = Mathf.Abs(error);
+                var absError = Mathf.Abs(error);
                 var errorCheck = refAngles[i] - hingeJoints[i].angle + 360;
-                if (Mathf.Abs(errorCheck) < absError[i])
+                if (Mathf.Abs(errorCheck) < absError)
                 {
                     error = errorCheck;
-                    absError[i] = Mathf.Abs(errorCheck);
+                    absError = Mathf.Abs(errorCheck);
                 }
                 errorCheck = refAngles[i] - hingeJoints[i].angle - 360;
-                if (Mathf.Abs(errorCheck) < absError[i])
+                if (Mathf.Abs(errorCheck) < absError)
                 {
                     error = errorCheck;
-                    absError[i] = Mathf.Abs(errorCheck);
+                    absError = Mathf.Abs(errorCheck);
                 }
 
                 var newMotor = new JointMotor();
