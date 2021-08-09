@@ -4,16 +4,33 @@ using UnityEngine;
 
 public class ConditionalEnable : MonoBehaviour
 {
+    public string creationStage;
+    public bool invert;
+
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetString("creationStage") == "research")
+        if (!invert)
         {
-            gameObject.SetActive(true);
+            if (PlayerPrefs.GetString("creationStage") == creationStage)
+            {
+                gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
         else
         {
-            gameObject.SetActive(false);
+            if (PlayerPrefs.GetString("creationStage") != creationStage)
+            {
+                gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 

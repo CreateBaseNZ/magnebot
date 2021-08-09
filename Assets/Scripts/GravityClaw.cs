@@ -31,7 +31,7 @@ public class GravityClaw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _targetMaterial.color = Vector3.Distance(targetVisual.transform.position, transform.position) < 0.25f ? Color.green : Color.red;
+        _targetMaterial.color = Vector3.Distance(targetVisual.transform.position, transform.position) < 0.5f ? Color.green : Color.red;
 
         if (dropObject)
         {

@@ -19,7 +19,8 @@ public class RoboticArm : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        sensorData.endEffectorPosition = endEffector.transform.position;
+        var v = endEffector.transform.position;
+        sensorData.endEffectorPosition = new Vector3(v.x, v.z, v.y);
 #if !UNITY_EDITOR && UNITY_WEBGL
         GetSensorData(JsonUtility.ToJson(sensorData));
 #endif
