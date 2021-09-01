@@ -18,7 +18,7 @@ public class JumpGameUIController : MonoBehaviour
         ResumeButton();
         pauseMenu.SetActive(false);
         simulationSpeed.GetComponent<Slider>().value = 1f;
-        if(PlayerPrefs.GetString("creationStage") == "research")
+        if (PlayerPrefs.GetString("creationStage") == "research")
         {
             simulationSpeed.SetActive(false);
         }
@@ -27,7 +27,8 @@ public class JumpGameUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GameController.Instance.gameState != GameController.GameState.PLAY)
+        if (GameController.Instance.gameState != GameController.GameState.PLAY &&
+            GameController.Instance.gameState != GameController.GameState.PAUSE)
         {
             GameOver();
         }

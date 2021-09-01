@@ -30,8 +30,9 @@ public class GameController : MonoBehaviour
     public enum GameState
     {
         PLAY = 0,
-        WIN = 1,
-        LOSE = 2
+        PAUSE = 1,
+        WIN = 2,
+        LOSE = 3
     }
 
     // Start is called before the first frame update
@@ -55,6 +56,10 @@ public class GameController : MonoBehaviour
     public void Pause()
     {
         Time.timeScale = 0;
+        gameState = GameState.PAUSE;
+#if !UNITY_EDITOR && UNITY_WEBGL
+        GetGameState("Pause");
+#endif
     }
 
     public void SetTimeScale(Slider slider)
@@ -66,6 +71,10 @@ public class GameController : MonoBehaviour
     public void Resume()
     {
         Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
+        gameState = GameState.PLAY;
+#if !UNITY_EDITOR && UNITY_WEBGL
+        GetGameState("Play");
+#endif
     }
 
     public void GameWin()
