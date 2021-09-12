@@ -39,7 +39,7 @@ public class JumpGameUIController : MonoBehaviour
         gameOverUI.SetActive(true);
         if (GameController.Instance.gameState == GameController.GameState.WIN)
         {
-            gameOverUI.GetComponentInChildren<TMP_Text>().text = "Noice!";
+            gameOverUI.GetComponentInChildren<TMP_Text>().text = "Congratulations. You win!";
         }
         else if (GameController.Instance.gameState == GameController.GameState.LOSE)
         {

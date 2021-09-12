@@ -102,6 +102,10 @@ public class ArmController : MonoBehaviour
             targets[2] = tempTargets[2];
             targets[3] = tempTargets[3];
         }
+        else
+        {
+            NotificationController.Instance.Notify("Cannot reach position");
+        }
     }
 
     public void SetTarget(string value)

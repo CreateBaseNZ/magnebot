@@ -6,25 +6,28 @@ using TMPro;
 public class HoverInfo : MonoBehaviour
 {
     public RectTransform label;
-    private Vector2 _referenceSize = new Vector2(1920, 1080);
+    private float _scaleFactor;
     private Vector3 _screenCoord;
-
+    private Camera _cam;
     private TMP_Text _textInfo;
 
     private void Start()
     {
         _textInfo = label.GetComponentInChildren<TMP_Text>();
+        _scaleFactor = label.GetComponentInParent<Canvas>().scaleFactor;
+        _cam = Camera.main;
     }
 
     private void OnMouseOver()
     {
-        _screenCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position);
+        _screenCoord = _cam.WorldToScreenPoint(gameObject.transform.position);
 
         if (!label.gameObject.activeInHierarchy)
         {
             label.gameObject.SetActive(true);
         }
-        label.anchoredPosition = _screenCoord;
+        
+        label.anchoredPosition = new Vector2(_screenCoord.x/ _scaleFactor, _screenCoord.y/ _scaleFactor);
         var position = gameObject.transform.position;
         _textInfo.SetText("(<color=\"red\">" + position.x.ToString("0.0")
             + "</color>, <color=\"green\">" + position.z.ToString("0.0")

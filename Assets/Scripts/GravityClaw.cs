@@ -31,7 +31,14 @@ public class GravityClaw : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _targetMaterial.color = Vector3.Distance(targetVisual.transform.position, transform.position) < 0.5f ? Color.green : Color.red;
+        if (Vector3.Distance(targetVisual.transform.position, transform.position) < 0.5f)
+        {
+            _targetMaterial.color = new Color(0, 1, 0, 0.5f);
+        }
+        else
+        {
+            _targetMaterial.color = new Color(1, 0, 0, 0.5f);
+        }
 
         if (dropObject)
         {
@@ -51,7 +58,7 @@ public class GravityClaw : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+
         if (other.tag.ToLower().Contains("objective"))
         {
             objectiveProgress[0].CompleteObjective();
