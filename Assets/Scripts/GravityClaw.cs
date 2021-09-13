@@ -33,11 +33,11 @@ public class GravityClaw : MonoBehaviour
     {
         if (Vector3.Distance(targetVisual.transform.position, transform.position) < 0.5f)
         {
-            _targetMaterial.color = new Color(0, 1, 0, 0.5f);
+            _targetMaterial.color = new Color(0, 1, 0, 0.8f);
         }
         else
         {
-            _targetMaterial.color = new Color(1, 0, 0, 0.5f);
+            _targetMaterial.color = new Color(1, 0, 0, 0.8f);
         }
 
         if (dropObject)
