@@ -1,9 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Linq;
 
 public class SceneController : MonoBehaviour
 {
@@ -23,6 +21,18 @@ public class SceneController : MonoBehaviour
     }
     #endregion
 
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
     public void ResetScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -32,11 +42,20 @@ public class SceneController : MonoBehaviour
     {
         var parseScene = sceneName.Split(',');
         var sceneToLoad = parseScene[0];
-        if (parseScene.Length == 2)
+
+        if (parseScene.Length >= 2)
         {
-            PlayerPrefs.SetString("creationStage", parseScene[1].ToLower());
+            PlayerPrefs.SetString("modifier", parseScene[1].ToLower());
+            if(parseScene[1] == "manual")
+            {
+                GameController.Instance.FocusCanvas("1");
+            }
         }
+        else
+        {
+            PlayerPrefs.SetString("modifier", "");
+        }
+
         SceneManager.LoadScene(sceneToLoad);
     }
 }
-

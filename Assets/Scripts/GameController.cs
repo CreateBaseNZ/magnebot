@@ -1,8 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 using System.Runtime.InteropServices;
-using UnityEngine.UI;
+using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
@@ -24,33 +23,37 @@ public class GameController : MonoBehaviour
 
     [DllImport("__Internal")]
     private static extern void GetGameState(string gameState);
+    private GameState m_gameState;
 
-    public GameState gameState = GameState.PLAY;
-
-    public enum GameState
+    public delegate void OnGameStateChangeDelegate(GameState newState);
+    public event OnGameStateChangeDelegate OnGameStateChange;
+    public GameState gameState
     {
-        PLAY = 0,
-        PAUSE = 1,
-        WIN = 2,
-        LOSE = 3
+        get { return m_gameState; }
+        set
+        {
+            if (m_gameState == value) return;
+            m_gameState = value;
+            if (OnGameStateChange != null)
+                OnGameStateChange(m_gameState);
+        }
     }
+
+    public string stateDescription = "";
 
     // Start is called before the first frame update
     void Start()
     {
-        if(PlayerPrefs.GetString("creationStage") == "research")
-        {
-            PlayerPrefs.SetFloat("timeScale", 1);
-        }
-        else
-        {
-            PlayerPrefs.SetFloat("timeScale", 1f);
-        }
-        Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
+        Resume();
 #if !UNITY_EDITOR && UNITY_WEBGL
         FocusCanvas(PlayerPrefs.GetString("p_focus"));
-        GetGameState("Play");
 #endif
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
     }
 
     public void Pause()
@@ -61,16 +64,9 @@ public class GameController : MonoBehaviour
         GetGameState("Pause");
 #endif
     }
-
-    public void SetTimeScale(Slider slider)
-    {
-        PlayerPrefs.SetFloat("timeScale", slider.value);
-        Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
-    }
-
     public void Resume()
     {
-        Time.timeScale = PlayerPrefs.GetFloat("timeScale", 1f);
+        Time.timeScale = PlayerPrefs.GetFloat("simulationSpeed", 1);
         gameState = GameState.PLAY;
 #if !UNITY_EDITOR && UNITY_WEBGL
         GetGameState("Play");
@@ -88,15 +84,15 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void GameLose()
+    public void GameLose(string description)
     {
         if (gameState == GameState.PLAY)
         {
+            stateDescription = description;
             gameState = GameState.LOSE;
 #if !UNITY_EDITOR && UNITY_WEBGL
             GetGameState("Lose");
 #endif
-
         }
     }
 

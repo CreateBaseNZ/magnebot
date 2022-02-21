@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 745bbe21a37fc934b99c52f2fdae0953
+guid: 637d1aca0af44fd40b30ee966f64b1f8
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -11,10 +11,7 @@ TrueTypeFontImporter:
   fontNames:
   - Poppins
   fallbackFontReferences:
-  - {fileID: 12800000, guid: 51d2b9e6570d3744f887bfc903d040af, type: 3}
-  - {fileID: 12800000, guid: 93753f337b829ba43894e72e5989716b, type: 3}
-  - {fileID: 12800000, guid: 918e08bcaf460fe4ca809af1ee87eaf4, type: 3}
-  - {fileID: 12800000, guid: 81192c21afea6e54faab5170faa65534, type: 3}
+  - {fileID: 12800000, guid: 40567d066f6135940a1a00fadb9863fb, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1

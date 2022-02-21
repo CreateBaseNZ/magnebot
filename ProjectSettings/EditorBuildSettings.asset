@@ -6,6 +6,13 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Arm Project/Project_RoboticArm_1.unity
+    path: Assets/Scenes/AppInitialization.unity
+    guid: 6561585766718ca4ea2ac031710c4e1c
+  - enabled: 1
+    path: Assets/Scenes/Project_RoboticArm_0.unity
     guid: f488dc7f96c5a9b4bb8b9f5905800717
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/Project_RoboticArm_1.unity
+    guid: d7e1e754999d0b74dac334d00974f10b
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: f10c0ff1264f04443941ad1a5f923665, type: 2}

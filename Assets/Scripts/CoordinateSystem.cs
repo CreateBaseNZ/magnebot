@@ -15,7 +15,7 @@ public class CoordinateSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.localPosition = new Vector3(-Screen.width/2 + offset.x, Screen.height/2 + offset.y, 0);
+        gameObject.transform.localPosition = new Vector3(Screen.width / 2 - offset.x, Screen.height / 2 + offset.y, 0);
         gameObject.transform.rotation = Quaternion.LookRotation(Vector3.forward, Vector3.up);
     }
 }

@@ -12,16 +12,13 @@ public class CameraController : MonoBehaviour
     public float yawSpeed = 100f;
     public float pitchSpeed = 100f;
 
-    private float _currentZoom = 10f;
-    private float _currentYaw = 0f;
-    private float _currentPitch = 0f;
+    [SerializeField] private float _currentZoom = 10f;
+    [SerializeField] private float _currentYaw = 0f;
+    [SerializeField] private float _currentPitch = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        _currentZoom = 36.7999f;
-        _currentYaw = -149.2203f;
-        _currentPitch = 7.727794f;
     }
 
     // Update is called once per frame
@@ -30,14 +27,14 @@ public class CameraController : MonoBehaviour
         _currentZoom -= Input.GetAxis("Mouse ScrollWheel") * zoomSpeed;
         _currentZoom = Mathf.Clamp(_currentZoom, minZoom, maxZoom);
 
-        if (Input.GetMouseButton(1) || Input.GetMouseButton(2))
+        if (Input.GetMouseButton(0) || Input.GetMouseButton(1) || Input.GetMouseButton(2))
         {
             _currentYaw += Input.GetAxis("Mouse X") * yawSpeed * Time.deltaTime;
             _currentPitch += Input.GetAxis("Mouse Y") * pitchSpeed * Time.deltaTime;
         }
-        _currentYaw += Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
+        _currentYaw -= Input.GetAxis("Horizontal") * yawSpeed * Time.deltaTime;
         _currentPitch -= Input.GetAxis("Vertical") * pitchSpeed * Time.deltaTime;
-
+        _currentPitch = Mathf.Clamp(_currentPitch, 0, 90);
     }
 
     private void LateUpdate()

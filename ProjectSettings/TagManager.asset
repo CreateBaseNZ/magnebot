@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - EndEffector
+  - Green
+  - Blue
   - Objective0
-  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -8,16 +8,13 @@ public class GravityClaw : MonoBehaviour
 {
     public bool dropObject = false;
     public Material shader;
-    public List<ObjectiveProgress> objectiveProgress;
     public GameObject targetVisual;
-    private Collider _collider;
     private Material _targetMaterial;
 
     // Start is called before the first frame update
     void Start()
     {
         _targetMaterial = targetVisual.GetComponent<Renderer>().material;
-        _collider = GetComponent<SphereCollider>();
         if (dropObject)
         {
             DisableGravitySphere();
@@ -58,20 +55,14 @@ public class GravityClaw : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-
-        if (other.tag.ToLower().Contains("objective"))
+        if (isActiveAndEnabled && !dropObject)
         {
-            objectiveProgress[0].CompleteObjective();
-            if (isActiveAndEnabled && !dropObject)
+            other.transform.parent = gameObject.transform;
+            other.transform.localPosition = Vector3.zero;
+            var rb = other.gameObject.GetComponent<Rigidbody>();
+            if (rb)
             {
-                objectiveProgress[1].CompleteObjective();
-                other.transform.parent = gameObject.transform;
-                other.transform.localPosition = Vector3.zero;
-                var rb = other.gameObject.GetComponent<Rigidbody>();
-                if (rb)
-                {
-                    rb.isKinematic = true;
-                }
+                rb.isKinematic = true;
             }
         }
     }

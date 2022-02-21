@@ -4,33 +4,19 @@ using UnityEngine;
 
 public class ConditionalEnable : MonoBehaviour
 {
-    public string creationStage;
-    public bool invert;
+    public string modifier;
+    public bool setActive = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (!invert)
+        if (modifier == PlayerPrefs.GetString("modifier"))
         {
-            if (PlayerPrefs.GetString("creationStage") == creationStage)
-            {
-                gameObject.SetActive(true);
-            }
-            else
-            {
-                gameObject.SetActive(false);
-            }
+            gameObject.SetActive(setActive);
         }
         else
         {
-            if (PlayerPrefs.GetString("creationStage") != creationStage)
-            {
-                gameObject.SetActive(true);
-            }
-            else
-            {
-                gameObject.SetActive(false);
-            }
+            gameObject.SetActive(!setActive);
         }
     }
 

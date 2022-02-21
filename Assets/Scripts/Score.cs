@@ -2,35 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Score : MonoBehaviour
 {
-    TMP_Text score;
-
-    private void Start()
+    private void OnEnable()
     {
-        score = GetComponent<TMP_Text>();
-    }
-
-    private void Update()
-    {
-        if (GameController.Instance.gameState != GameController.GameState.PLAY)
+        if (GameController.Instance.gameState == GameState.WIN)
         {
-            var playerScore = 0;
-            if (PlayerPrefs.GetString("creationStage") == "research")
-            {
-                playerScore = (int)(Time.timeSinceLevelLoad * 2.55f);
-            }
-            else if (PlayerPrefs.GetString("creationStage") == "create")
-            {
-                playerScore = (int)Time.timeSinceLevelLoad;
-            }
-            else if(PlayerPrefs.GetString("creationStage") == "improve")
-            {
-                playerScore = (int)(Time.timeSinceLevelLoad * PlayerPrefs.GetFloat("scoreMultiplier"));
-            }
-            score.text = playerScore.ToString();
-            enabled = false;
+            var t = TimeSpan.FromSeconds(Time.timeSinceLevelLoad);
+            GetComponent<TMP_Text>().text = $"{t.Minutes.ToString("00")}<size=50%>M</size>{t.Seconds.ToString("00")}<size=50%>S</size>";
+        }
+        else if (GameController.Instance.gameState == GameState.LOSE)
+        {
+            GetComponent<TMP_Text>().text = GameController.Instance.stateDescription;
         }
     }
 }

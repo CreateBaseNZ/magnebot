@@ -18,7 +18,7 @@ public class JointBreakScript : MonoBehaviour
 
     private void OnJointBreak(float breakForce)
     {
-        GameController.Instance.GameLose();
+        GameController.Instance.GameLose("An arm joint has broken");
     }
 
 }
